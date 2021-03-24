@@ -9,6 +9,7 @@ public class ThirdPersonController : MonoBehaviour
     public Transform cam;
 
     public float speed = 6f;
+    public float stealthSpeed = 2f;
     public float turnSmoopthTime = 0.1f;
     float turnSmoopthVelocity;
 
@@ -46,7 +47,10 @@ public class ThirdPersonController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(moveDir.normalized * speed * Time.deltaTime);
+            if (Input.GetKey(KeyCode.LeftShift))
+                controller.Move(moveDir.normalized * stealthSpeed * Time.deltaTime);
+            else
+                controller.Move(moveDir.normalized * speed * Time.deltaTime);
         }
 
         if (Input.GetButtonDown("Jump") && isGrounded)

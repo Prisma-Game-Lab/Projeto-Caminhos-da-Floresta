@@ -6,6 +6,7 @@ public class FirstPersonController : MonoBehaviour
 {
     public float mouseSensitivity = 100f;
     public float speed = 10f;
+    public float stealthSpeed = 5f;
     public float gravity = -9.81f;
     public float jumpHight = 3f;
 
@@ -43,6 +44,7 @@ public class FirstPersonController : MonoBehaviour
         playerBody.Rotate(Vector3.up, mouseX);
 
         //Movimentação
+       
         Vector3 move = transform.right * movHorizontal + transform.forward * movVertical;
         controller.Move(move * speed * Time.deltaTime);
 
