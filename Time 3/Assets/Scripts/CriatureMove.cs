@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -10,7 +9,9 @@ public class CriatureMove : MonoBehaviour
     public string present;
 
     public GameObject Offering;
-    private bool isTrigger = false;
+    private bool _isTrigger = false;
+
+    
 
     private void Start()
     {
@@ -18,8 +19,9 @@ public class CriatureMove : MonoBehaviour
     }
 
     void Update()
-    {
-        if (isTrigger)
+    {  
+
+        if (_isTrigger)
         {
             PressZ();
         }
@@ -31,7 +33,7 @@ public class CriatureMove : MonoBehaviour
         {
             triggerText.gameObject.SetActive(true);
             triggerText.text = "Aperte E para dar o presente";
-            isTrigger = true;
+            _isTrigger = true;
         }
 
     }
@@ -55,7 +57,8 @@ public class CriatureMove : MonoBehaviour
             player.gameObject.GetComponent<ObjectCollider>().objectList.Remove(present);
 
             triggerText.text = "Voce entregou o presente e recebeu uma oferenda!";
-            isTrigger = false;
+            _isTrigger = false;
+            _isTrigger = false;
             triggerText.gameObject.SetActive(true);
             StartCoroutine(DisableText());
             this.gameObject.transform.position = new Vector3(0, -30);

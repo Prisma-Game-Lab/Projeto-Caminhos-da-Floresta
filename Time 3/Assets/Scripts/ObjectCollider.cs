@@ -5,25 +5,21 @@ using TMPro;
 
 public class ObjectCollider : MonoBehaviour
 {
-    [Tooltip("Referencia texto que conta objetos")]
-    public GameObject Object;
-
     public TextMeshProUGUI triggerText;
 
     public List<string> objectList = new List<string>();
 
     static private int count = 0;
 
-    private GameObject Other;
+    private GameObject _Other;
 
-    private bool isTrigger = false;
+    private bool _isTrigger = false;
     public bool energy = true;
 
 
 
     void Start()
     {
-        Object.SetActive(false);
         triggerText.gameObject.SetActive(false);
     }
 
@@ -49,7 +45,7 @@ public class ObjectCollider : MonoBehaviour
 
     void Update()
     {
-        if (isTrigger)
+        if (_isTrigger)
         {
             PressZ();
         }
@@ -57,16 +53,16 @@ public class ObjectCollider : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Other = other.gameObject;
-        if (Other.CompareTag("Object") || Other.CompareTag("Offering"))
+        _Other = other.gameObject;
+        if (_Other.CompareTag("Object") || _Other.CompareTag("Offering"))
         {
-            isTrigger = true;
+            _isTrigger = true;
             triggerText.gameObject.SetActive(true);
             triggerText.text = "Aperte E para interagir";
         }
         if (other.CompareTag("Pedestal") && objectList.Contains("Offering"))
         {
-            isTrigger = true;
+            _isTrigger = true;
             triggerText.gameObject.SetActive(true);
             triggerText.text = "Aperte E para realizar a oferenda";
         }
@@ -74,25 +70,25 @@ public class ObjectCollider : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Object") || Other.CompareTag("Offering"))
+        if (other.gameObject.CompareTag("Object") || _Other.CompareTag("Offering"))
         {
             triggerText.gameObject.SetActive(false);
-            isTrigger = false;
+            _isTrigger = false;
         }
     }
 
     void PressZ()
     {
-        if (Input.GetKeyDown("e") && !Other.CompareTag("Pedestal"))
+        if (Input.GetKeyDown("e") && !_Other.CompareTag("Pedestal"))
         {
-            objectList.Add(Other.name);
-            Other.SetActive(false);
+            objectList.Add(_Other.name);
+            _Other.SetActive(false);
             count++;
-            if(Other.CompareTag("Object"))
+            if(_Other.CompareTag("Object"))
                 triggerText.text = "Voce pegou o objeto!";
-            else if (Other.CompareTag("Offering"))
+            else if (_Other.CompareTag("Offering"))
                 triggerText.text = "Voce pegou a oferenda!";
-            isTrigger = false;
+            _isTrigger = false;
             triggerText.gameObject.SetActive(true);
             StartCoroutine(DisableText());
         }
@@ -100,10 +96,10 @@ public class ObjectCollider : MonoBehaviour
         {
             if (Input.GetKeyDown("e"))
             {
-                Other.GetComponent<OrbController>().orb.SetActive(true);
+                _Other.GetComponent<OrbController>().orb.SetActive(true);
                 objectList.Remove("Offering");
                 triggerText.text = "Voce entregou a oferenda, o orbe se ascende!";
-                isTrigger = false;
+                _isTrigger = false;
                 triggerText.gameObject.SetActive(true);
                 StartCoroutine(DisableText());
             }

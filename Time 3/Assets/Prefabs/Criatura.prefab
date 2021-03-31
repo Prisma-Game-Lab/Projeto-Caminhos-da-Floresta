@@ -44,8 +44,10 @@ GameObject:
   - component: {fileID: 575191927016316482}
   - component: {fileID: 575191927016316483}
   - component: {fileID: 575191927016316484}
+  - component: {fileID: 5032965872761604317}
   - component: {fileID: 575191927016316485}
   - component: {fileID: 575191927016316480}
+  - component: {fileID: 56037766720574521}
   m_Layer: 0
   m_Name: Criature
   m_TagString: Untagged
@@ -129,6 +131,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!195 &5032965872761604317
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575191927016316486}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!114 &575191927016316485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,6 +185,22 @@ MonoBehaviour:
   triggerText: {fileID: 0}
   present: Flower
   Offering: {fileID: 575191927717847927}
+--- !u!114 &56037766720574521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575191927016316486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec3a4b05b8dc1e742ab7ff19e0e658fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _patrolwaiting: 0
+  _totalWaitTime: 3
+  _switchProbability: 0
+  _patrolPoints: []
 --- !u!1 &575191927717847927
 GameObject:
   m_ObjectHideFlags: 0
