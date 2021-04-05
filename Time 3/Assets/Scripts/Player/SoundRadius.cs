@@ -8,10 +8,7 @@ public class SoundRadius : MonoBehaviour
 
     private void Update()
     {
-        if (InRadius(this.transform, maxRadius))
-        {
-            Debug.Log("A craitura está dentro do raio");
-        }
+        InRadius(this.transform, maxRadius);
     }
 
     private void OnDrawGizmos()
@@ -20,7 +17,7 @@ public class SoundRadius : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, maxRadius);
     }
 
-    public static bool InRadius(Transform checkingObject, float maxRadius)
+    public static void InRadius(Transform checkingObject, float maxRadius)
     {
         Collider[] overlaps = new Collider[10];
         int count = Physics.OverlapSphereNonAlloc(checkingObject.position, maxRadius, overlaps);
@@ -42,12 +39,18 @@ public class SoundRadius : MonoBehaviour
                         if (hit.transform.gameObject.tag == "Creature")
                         {
                             /* A cria está dentro do raio */
-                            return true;
+
+                            Debug.Log("A craitura está dentro do raio");
+                            if (Input.GetMouseButtonDown(0))
+                            {
+                                checkingObject.gameObject.GetComponent<ObjectCollider>().objectList.Add("Offering");
+
+                                hit.transform.gameObject.SetActive(false);
+                            }
                         }
                     }
                 }
             }
         }
-        return false;
     }
 }
