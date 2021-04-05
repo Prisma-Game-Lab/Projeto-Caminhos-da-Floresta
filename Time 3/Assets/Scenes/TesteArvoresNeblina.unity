@@ -3338,7 +3338,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1250160953}
-  m_LocalRotation: {x: 0.1350594, y: -0.00000001476463, z: 0.0000000020125421, w: 0.9908375}
+  m_LocalRotation: {x: 0.13505942, y: 8.719026e-16, z: -1.7869098e-17, w: 0.9908375}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4789,7 +4789,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734514184}
-  m_LocalRotation: {x: 0.117014244, y: 0.00000003417636, z: -0.000000004026784, w: 0.99313027}
+  m_LocalRotation: {x: 0.117014244, y: -0.00000003417636, z: 0.000000004026784, w: 0.99313027}
   m_LocalPosition: {x: 0, y: 7.1, z: -18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -5102,7 +5102,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818864051}
-  m_LocalRotation: {x: 0.11701424, y: 0.00000001708818, z: -0.000000002013392, w: 0.99313027}
+  m_LocalRotation: {x: 0.11701424, y: -0.000000017088176, z: 0.0000000020133915, w: 0.99313027}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5285,6 +5285,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Criatura
       objectReference: {fileID: 0}
+    - target: {fileID: 575191926863893122, guid: cd742cca8cd97a64b87bf569249b447f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 575191927016316480, guid: cd742cca8cd97a64b87bf569249b447f,
         type: 3}
       propertyPath: player
@@ -5300,6 +5305,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1527087150}
+    - target: {fileID: 575191927016316486, guid: cd742cca8cd97a64b87bf569249b447f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Creature
+      objectReference: {fileID: 0}
     - target: {fileID: 5032965872761604317, guid: cd742cca8cd97a64b87bf569249b447f,
         type: 3}
       propertyPath: m_Speed
@@ -6338,6 +6348,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2193301771164549197, guid: 2d13b9e7a88219044bac928cde87945c,
+        type: 3}
+      propertyPath: maxRadius
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7322880617801411540, guid: 2d13b9e7a88219044bac928cde87945c,
         type: 3}
       propertyPath: m_Layer
