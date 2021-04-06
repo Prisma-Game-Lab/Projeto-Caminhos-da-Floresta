@@ -40,7 +40,7 @@ public class SoundRadius : MonoBehaviour
                         {
                             /* A cria está dentro do raio */
 
-                            Debug.Log("A craitura está dentro do raio");
+                            //Debug.Log("A craitura está dentro do raio");
                             if (Input.GetMouseButtonDown(0))
                             {
                                 checkingObject.gameObject.GetComponent<ObjectCollider>().objectList.Add("Offering");

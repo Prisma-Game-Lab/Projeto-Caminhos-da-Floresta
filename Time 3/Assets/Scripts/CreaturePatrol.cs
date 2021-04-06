@@ -22,6 +22,7 @@ public class CreaturePatrol : MonoBehaviour
     List<Waypoint> _patrolPoints;
 
     //Private variables for base behaviour
+    public bool flee = false;
     private NavMeshAgent _navMeshAgent;
     private int _currrentPatrolIndex;
     private bool _travelling;
@@ -49,33 +50,36 @@ public class CreaturePatrol : MonoBehaviour
 
     private void Update()
     {
-        if (_travelling && _navMeshAgent.remainingDistance <= 1f)
+        if(flee == false)
         {
-            _travelling = false;
-
-            //If were going to wait, then wait
-            if (_patrolwaiting)
+            if (_travelling && _navMeshAgent.remainingDistance <= 1f)
             {
-                _waiting = true;
-                _waitTimer = 0f;
+                _travelling = false;
+
+                //If were going to wait, then wait
+                if (_patrolwaiting)
+                {
+                    _waiting = true;
+                    _waitTimer = 0f;
+                }
+                else
+                {
+                    ChangePatrolPoint();
+                    SetDestination();
+                }
             }
-            else
-            {
-                ChangePatrolPoint();
-                SetDestination();
-            }
-        }
 
-        //Instead if were waiting
-        if (_waiting)
-        {
-            _waitTimer += Time.deltaTime;
-                if(_waitTimer >= _totalWaitTime)
+            //Instead if were waiting
+            if (_waiting)
             {
-                _waiting = false;
+                _waitTimer += Time.deltaTime;
+                if (_waitTimer >= _totalWaitTime)
+                {
+                    _waiting = false;
 
-                ChangePatrolPoint();
-                SetDestination();
+                    ChangePatrolPoint();
+                    SetDestination();
+                }
             }
         }
     }
