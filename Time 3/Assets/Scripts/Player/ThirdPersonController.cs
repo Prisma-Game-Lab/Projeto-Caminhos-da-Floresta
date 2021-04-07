@@ -22,6 +22,9 @@ public class ThirdPersonController : MonoBehaviour
     public Transform groundCheck;
     private bool isGrounded;
 
+    [HideInInspector]
+    public bool isMoving;
+
     // Update is called once per frame
     void Update()
     {
@@ -38,9 +41,10 @@ public class ThirdPersonController : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
-
+        isMoving = false;
         if (direction.magnitude >= 0.1f)
         {
+            isMoving = true;
             /* Rotarionar o persongaem para a direção em que ele está indo */
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoopthVelocity, turnSmoopthTime);
