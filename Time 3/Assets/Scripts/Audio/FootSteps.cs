@@ -25,7 +25,7 @@ public class FootSteps : MonoBehaviour
         FMOD.Studio.PLAYBACK_STATE state;
         footSteps.getPlaybackState(out state);
 
-        if (playerController.isMoving)
+        if (playerController.isMoving && playerController.isGrounded)
         {
             if (state == FMOD.Studio.PLAYBACK_STATE.STOPPED)
                 footSteps.start();

@@ -20,7 +20,9 @@ public class ThirdPersonController : MonoBehaviour
     Vector3 velocity;
     public LayerMask groundMask;
     public Transform groundCheck;
-    private bool isGrounded;
+    
+    [HideInInspector]
+    public bool isGrounded;
 
     [HideInInspector]
     public bool isMoving;
