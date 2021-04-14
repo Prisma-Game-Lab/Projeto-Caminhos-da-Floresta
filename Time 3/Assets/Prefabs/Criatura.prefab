@@ -141,7 +141,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -168,6 +168,7 @@ MonoBehaviour:
   player: {fileID: 0}
   maxAngle: 45
   maxRadius: 6.4
+  multiplyBy: 0
   isInFov: 0
 --- !u!114 &575191927016316480
 MonoBehaviour:
@@ -201,6 +202,7 @@ MonoBehaviour:
   _totalWaitTime: 3
   _switchProbability: 0
   _patrolPoints: []
+  flee: 0
 --- !u!1 &575191927717847927
 GameObject:
   m_ObjectHideFlags: 0
