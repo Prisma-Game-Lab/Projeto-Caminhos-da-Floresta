@@ -98,7 +98,7 @@ public class ObjectCollider : MonoBehaviour
             {
                 _Other.GetComponent<OrbController>().orb.SetActive(true);
                 objectList.Remove("Offering");
-                triggerText.text = "Voce entregou a oferenda, o orbe se ascende!";
+                triggerText.text = "Voce entregou a oferenda, o orbe se acende!";
                 _isTrigger = false;
                 triggerText.gameObject.SetActive(true);
                 StartCoroutine(DisableText());
