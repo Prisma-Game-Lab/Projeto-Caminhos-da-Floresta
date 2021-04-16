@@ -16,11 +16,14 @@ public class ObjectCollider : MonoBehaviour
     private bool _isTrigger = false;
     public bool energy = true;
 
-
+    FMOD.Studio.EventInstance pickItem;
+    FMOD.Studio.EventInstance lightOrb;
 
     void Start()
     {
         triggerText.gameObject.SetActive(false);
+        pickItem = FMODUnity.RuntimeManager.CreateInstance("event:/pickItem");
+        lightOrb = FMODUnity.RuntimeManager.CreateInstance("event:/lightOrb");
     }
 
     void Awake()
@@ -81,6 +84,8 @@ public class ObjectCollider : MonoBehaviour
     {
         if (Input.GetKeyDown("e") && !_Other.CompareTag("Pedestal"))
         {
+            pickItem.start();
+
             objectList.Add(_Other.name);
             _Other.SetActive(false);
             count++;
@@ -96,6 +101,7 @@ public class ObjectCollider : MonoBehaviour
         {
             if (Input.GetKeyDown("e"))
             {
+                orbLight.start();
                 _Other.GetComponent<OrbController>().orb.SetActive(true);
                 objectList.Remove("Offering");
                 triggerText.text = "Voce entregou a oferenda, o orbe se acende!";
