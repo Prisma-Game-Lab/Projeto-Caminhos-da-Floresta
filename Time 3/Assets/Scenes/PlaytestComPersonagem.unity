@@ -5716,11 +5716,26 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Creature
       objectReference: {fileID: 0}
+    - target: {fileID: 1691418440692863397, guid: cd742cca8cd97a64b87bf569249b447f,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 7322880617319656283}
+    - target: {fileID: 1691418440692863397, guid: cd742cca8cd97a64b87bf569249b447f,
+        type: 3}
+      propertyPath: triggerText
+      value: 
+      objectReference: {fileID: 533433380}
     - target: {fileID: 5032965872761604317, guid: cd742cca8cd97a64b87bf569249b447f,
         type: 3}
       propertyPath: m_Speed
       value: 23
       objectReference: {fileID: 0}
+    - target: {fileID: 5657672835356447359, guid: cd742cca8cd97a64b87bf569249b447f,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 7322880617319656283}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd742cca8cd97a64b87bf569249b447f, type: 3}
 --- !u!1 &1915913085
@@ -6760,8 +6775,60 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1734514187}
-    m_RemovedComponents: []
+    - target: {fileID: 7322880618745555830, guid: 2d13b9e7a88219044bac928cde87945c,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322880618745555830, guid: 2d13b9e7a88219044bac928cde87945c,
+        type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322880618745555830, guid: 2d13b9e7a88219044bac928cde87945c,
+        type: 3}
+      propertyPath: gravity
+      value: -22
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322880618745555830, guid: 2d13b9e7a88219044bac928cde87945c,
+        type: 3}
+      propertyPath: jumpForce
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322880618745555830, guid: 2d13b9e7a88219044bac928cde87945c,
+        type: 3}
+      propertyPath: stealthSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322880618745555830, guid: 2d13b9e7a88219044bac928cde87945c,
+        type: 3}
+      propertyPath: turnSmoopthTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322880619141983059, guid: 2d13b9e7a88219044bac928cde87945c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322880619329258323, guid: 2d13b9e7a88219044bac928cde87945c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322880619329258323, guid: 2d13b9e7a88219044bac928cde87945c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3167474566309437119, guid: 2d13b9e7a88219044bac928cde87945c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2d13b9e7a88219044bac928cde87945c, type: 3}
+--- !u!4 &7322880617319656283 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 114332948442647384, guid: 2d13b9e7a88219044bac928cde87945c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7322880617319656282}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8386848388767852580
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,11 +11,12 @@ public class CriatureMove : MonoBehaviour
     public GameObject Offering;
     private bool _isTrigger = false;
 
-    
+    FMOD.Studio.EventInstance giveItem;
 
     private void Start()
     {
         Offering.SetActive(false);
+        giveItem = FMODUnity.RuntimeManager.CreateInstance("event:/giveItem");
     }
 
     void Update()
@@ -50,6 +51,8 @@ public class CriatureMove : MonoBehaviour
     {
         if (Input.GetKeyDown("e"))
         {
+            giveItem.start();
+
             Offering.SetActive(true);
             Offering.transform.position = this.transform.position;
             
