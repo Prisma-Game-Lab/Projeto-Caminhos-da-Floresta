@@ -1,19 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!64 &3167474566309437119
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783029959101534690}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!136 &5751689898137266962
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -28,6 +14,25 @@ CapsuleCollider:
   m_Height: 8.62
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 4.27, z: -0.00000008940697}
+--- !u!95 &194580792
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783029959101534690}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 20c6f9bb00cd863439d5b03844da89ba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7322880617801411540
 GameObject:
   m_ObjectHideFlags: 0
@@ -40,13 +45,13 @@ GameObject:
   - component: {fileID: 7322880617801411528}
   - component: {fileID: 7322880617801411531}
   - component: {fileID: 7322880617801411530}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7322880617801411541
 Transform:
   m_ObjectHideFlags: 0
@@ -121,9 +126,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5000001
-  m_Height: 2
+  m_Height: 1.9998152
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0.000000059604645, y: 0.000099865596, z: -0.000000099340994}
 --- !u!1 &7322880618745555825
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,9 +141,11 @@ GameObject:
   - component: {fileID: 7322880618745555831}
   - component: {fileID: 7322880618745555830}
   - component: {fileID: 2193301771164549197}
-  m_Layer: 0
+  - component: {fileID: 2011915554}
+  - component: {fileID: 2011915556}
+  m_Layer: 6
   m_Name: Player Third Person
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -193,11 +200,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 7322880618745555831}
   cam: {fileID: 0}
-  speed: 10
-  stealthSpeed: 2
-  turnSmoopthTime: 0.1
-  gravity: -14
-  jumpForce: 5
+  anim: {fileID: 194580792}
+  speed: 20
+  stealthSpeed: 6
+  turnSmoopthTime: 0.2
+  gravity: -22
+  jumpForce: 2.5
   groundDistance: 0.4
   groundMask:
     serializedVersion: 2
@@ -217,7 +225,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3c1c6d0950dd9742af56aa179d9ba1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxRadius: 5
+  maxRadius: 15
+--- !u!114 &2011915554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7322880618745555825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86669486e60bd8c43b3f0c05af9dd5e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2011915556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7322880618745555825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07442732ae4692948964056ce33085ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerText: {fileID: 0}
+  objectList: []
+  energy: 1
 --- !u!1 &7322880619141983059
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +262,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7322880619141983056}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground Check
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,13 +295,13 @@ GameObject:
   - component: {fileID: 7322880619329258327}
   - component: {fileID: 7322880619329258326}
   - component: {fileID: 7322880619329258321}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7322880619329258320
 Transform:
   m_ObjectHideFlags: 0
