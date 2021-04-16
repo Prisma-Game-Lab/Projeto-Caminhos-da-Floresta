@@ -7,6 +7,7 @@ public class ThirdPersonController : MonoBehaviour
 
     public CharacterController controller;
     public Transform cam;
+    public Animator anim;
 
     public float speed = 6f;
     public float stealthSpeed = 2f;
@@ -63,6 +64,8 @@ public class ThirdPersonController : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
         }
-        
+        anim.SetFloat("Speed", (Mathf.Abs(vertical)) + Mathf.Abs(horizontal));
+
+       
     }
 }
