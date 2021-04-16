@@ -101,7 +101,7 @@ public class ObjectCollider : MonoBehaviour
         {
             if (Input.GetKeyDown("e"))
             {
-                orbLight.start();
+                //orbLight.start();
                 _Other.GetComponent<OrbController>().orb.SetActive(true);
                 objectList.Remove("Offering");
                 triggerText.text = "Voce entregou a oferenda, o orbe se acende!";

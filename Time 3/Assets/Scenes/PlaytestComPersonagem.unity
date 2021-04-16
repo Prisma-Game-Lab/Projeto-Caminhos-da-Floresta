@@ -4986,6 +4986,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1669780301 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 194580792, guid: 2d13b9e7a88219044bac928cde87945c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7322880617319656282}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1689717617 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 226647386770502202, guid: 6077cdc83ce471e46b4c5204ff0c14de,
@@ -5695,7 +5701,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1527087150}
     - target: {fileID: 575191927016316485, guid: cd742cca8cd97a64b87bf569249b447f,
         type: 3}
       propertyPath: maxAngle
@@ -5713,6 +5719,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 575191927016316486, guid: cd742cca8cd97a64b87bf569249b447f,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 575191927016316486, guid: cd742cca8cd97a64b87bf569249b447f,
+        type: 3}
       propertyPath: m_TagString
       value: Creature
       objectReference: {fileID: 0}
@@ -5726,6 +5737,11 @@ PrefabInstance:
       propertyPath: triggerText
       value: 
       objectReference: {fileID: 533433380}
+    - target: {fileID: 4476483714495796029, guid: cd742cca8cd97a64b87bf569249b447f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5032965872761604317, guid: cd742cca8cd97a64b87bf569249b447f,
         type: 3}
       propertyPath: m_Speed
@@ -6100,7 +6116,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2022230654}
-  m_LocalRotation: {x: 0.09897817, y: 0.000000008560945, z: -8.515279e-10, w: 0.99508965}
+  m_LocalRotation: {x: 0.09897817, y: -0.000000008560947, z: 8.5152807e-10, w: 0.99508965}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6779,7 +6795,7 @@ PrefabInstance:
         type: 3}
       propertyPath: anim
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1669780301}
     - target: {fileID: 7322880618745555830, guid: 2d13b9e7a88219044bac928cde87945c,
         type: 3}
       propertyPath: speed
