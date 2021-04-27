@@ -21,7 +21,8 @@ public class ThirdPersonController : MonoBehaviour
     Vector3 velocity;
     public LayerMask groundMask;
     public Transform groundCheck;
-    
+    private bool stealth = false;
+
     [HideInInspector]
     public bool isGrounded;
 
@@ -57,16 +58,22 @@ public class ThirdPersonController : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 controller.Move(moveDir.normalized * stealthSpeed * Time.deltaTime);
-                anim.SetTrigger("Jump");
+                anim.SetBool("Stealth", true);
+                
+                stealth = true;
             }
 
             else
             {
                 controller.Move(moveDir.normalized * speed * Time.deltaTime);
-                anim.SetFloat("Speed", (Mathf.Abs(vertical)) + Mathf.Abs(horizontal));
+                anim.SetBool("Stealth", false);
+                anim.SetBool("Walking", true);
+                stealth = false;
             }
                 
         }
+        else
+            anim.SetBool("Walking", false);
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
@@ -74,7 +81,9 @@ public class ThirdPersonController : MonoBehaviour
             anim.SetTrigger("Jump");
         }
         
+        //if(stealth)
+            //anim.SetFloat("Speed", (Mathf.Abs(vertical)) + Mathf.Abs(horizontal));
+            
 
-       
     }
 }
