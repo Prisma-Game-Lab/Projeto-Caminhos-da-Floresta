@@ -16,6 +16,7 @@ public class ObjectCollider : MonoBehaviour
 
     private bool _isTrigger = false;
     public bool energy = true;
+    public Animator anim;
 
     FMOD.Studio.EventInstance pickItem;
     FMOD.Studio.EventInstance lightOrb;
@@ -87,6 +88,7 @@ public class ObjectCollider : MonoBehaviour
         if (Input.GetKeyDown("e") && !_Other.CompareTag("Pedestal"))
         {
             pickItem.start();
+            anim.SetTrigger("Pegar_item");
 
             objectList.Add(_Other.name);
             _Other.SetActive(false);

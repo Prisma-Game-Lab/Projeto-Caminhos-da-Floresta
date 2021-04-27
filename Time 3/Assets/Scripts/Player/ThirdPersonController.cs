@@ -29,7 +29,7 @@ public class ThirdPersonController : MonoBehaviour
     public bool isMoving;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -55,16 +55,25 @@ public class ThirdPersonController : MonoBehaviour
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             if (Input.GetKey(KeyCode.LeftShift))
+            {
                 controller.Move(moveDir.normalized * stealthSpeed * Time.deltaTime);
+                anim.SetTrigger("Jump");
+            }
+
             else
+            {
                 controller.Move(moveDir.normalized * speed * Time.deltaTime);
+                anim.SetFloat("Speed", (Mathf.Abs(vertical)) + Mathf.Abs(horizontal));
+            }
+                
         }
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
+            anim.SetTrigger("Jump");
         }
-        anim.SetFloat("Speed", (Mathf.Abs(vertical)) + Mathf.Abs(horizontal));
+        
 
        
     }

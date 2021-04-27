@@ -1283,7 +1283,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerText: {fileID: 0}
   objectList: []
+  gameOverUI: {fileID: 0}
   energy: 1
+  anim: {fileID: 0}
 --- !u!64 &405406818
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4986,12 +4988,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1669780301 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 194580792, guid: 2d13b9e7a88219044bac928cde87945c,
-    type: 3}
-  m_PrefabInstance: {fileID: 7322880617319656282}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1689717617 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 226647386770502202, guid: 6077cdc83ce471e46b4c5204ff0c14de,
@@ -5731,7 +5727,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 7322880617319656283}
+      objectReference: {fileID: 0}
     - target: {fileID: 1691418440692863397, guid: cd742cca8cd97a64b87bf569249b447f,
         type: 3}
       propertyPath: triggerText
@@ -5751,7 +5747,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 7322880617319656283}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd742cca8cd97a64b87bf569249b447f, type: 3}
 --- !u!1 &1915913085
@@ -6723,9 +6719,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2011915556, guid: 2d13b9e7a88219044bac928cde87945c, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 7322880617319656283}
+    - target: {fileID: 2011915556, guid: 2d13b9e7a88219044bac928cde87945c, type: 3}
       propertyPath: triggerText
       value: 
       objectReference: {fileID: 533433380}
+    - target: {fileID: 4412362057140643027, guid: 2d13b9e7a88219044bac928cde87945c,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 20c6f9bb00cd863439d5b03844da89ba, type: 2}
     - target: {fileID: 7322880618745555825, guid: 2d13b9e7a88219044bac928cde87945c,
         type: 3}
       propertyPath: m_Name
@@ -6795,7 +6800,7 @@ PrefabInstance:
         type: 3}
       propertyPath: anim
       value: 
-      objectReference: {fileID: 1669780301}
+      objectReference: {fileID: 7322880617319656283}
     - target: {fileID: 7322880618745555830, guid: 2d13b9e7a88219044bac928cde87945c,
         type: 3}
       propertyPath: speed
@@ -6839,9 +6844,9 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3167474566309437119, guid: 2d13b9e7a88219044bac928cde87945c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2d13b9e7a88219044bac928cde87945c, type: 3}
---- !u!4 &7322880617319656283 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 114332948442647384, guid: 2d13b9e7a88219044bac928cde87945c,
+--- !u!95 &7322880617319656283 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4412362057140643027, guid: 2d13b9e7a88219044bac928cde87945c,
     type: 3}
   m_PrefabInstance: {fileID: 7322880617319656282}
   m_PrefabAsset: {fileID: 0}
