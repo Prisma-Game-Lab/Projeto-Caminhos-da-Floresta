@@ -6,8 +6,9 @@ public class FootSteps : MonoBehaviour
     private TerrainDetector terrainDetector;
     FMOD.Studio.EventInstance footSteps;
     //private ThirdPersonController playerController;
-
     private bool canPlayFootSteps = true;
+
+    public float footStepsCooldownTime;
 
     private void Awake()
     {
@@ -19,27 +20,21 @@ public class FootSteps : MonoBehaviour
 
     private void Step(int mode) //chamada pelo animator
     {
-        //Debug.Log("PISOU");
-        //Debug.Log(mode);
         int terrainTextureIndex = terrainDetector.GetActiveTerrainTextureIdx(transform.position);
         int parameterValue = textureIndexToParameterValue(terrainTextureIndex);
-        footSteps.setParameterByName("terrain", parameterValue);
-
-        //footSteps.setVolume(1.0f);
-        footSteps.setParameterByName("mode", mode);
-        //if (mode == 1){ //se for stealth
-            //footSteps.setVolume(0.3f);
-        //}
-
-        if (canPlayFootSteps)
+        
+        if (canPlayFootSteps){
+            footSteps.setParameterByName("terrain", parameterValue);
+            footSteps.setParameterByName("mode", mode);
             footSteps.start();
+        }
         StartCoroutine(FootStepsCooldown());
     }
 
     private IEnumerator FootStepsCooldown()
     {
         canPlayFootSteps = false;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(footStepsCooldownTime);
         canPlayFootSteps = true;
     }
 
