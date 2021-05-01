@@ -4,11 +4,11 @@ public class FootSteps : MonoBehaviour
 {
     private TerrainDetector terrainDetector;
     FMOD.Studio.EventInstance footSteps;
-    private ThirdPersonController playerController;
+    //private ThirdPersonController playerController;
 
     private void Awake()
     {
-        playerController = gameObject.GetComponent<ThirdPersonController>();
+        //playerController = gameObject.GetComponent<ThirdPersonController>();
         terrainDetector = new TerrainDetector();
         footSteps = FMODUnity.RuntimeManager.CreateInstance("event:/footSteps");
         //footSteps.start();
@@ -16,9 +16,15 @@ public class FootSteps : MonoBehaviour
 
     private void Step() //chamada pelo animator
     {
-        
+        //Debug.Log("PISOU");
+        int terrainTextureIndex = terrainDetector.GetActiveTerrainTextureIdx(transform.position);
+        footSteps.setParameterByName("terrain", terrainTextureIndex);
+
+        footSteps.start();
+
     }
-    private void Update() {
+
+   /* private void Update() {
         int terrainTextureIndex = terrainDetector.GetActiveTerrainTextureIdx(transform.position);
         footSteps.setParameterByName("terrain", terrainTextureIndex);
 
@@ -37,5 +43,5 @@ public class FootSteps : MonoBehaviour
         }
 
         //Debug.Log(terrainTextureIndex);
-    }
+    }*/
 }
