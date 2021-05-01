@@ -25,10 +25,11 @@ public class FootSteps : MonoBehaviour
         int parameterValue = textureIndexToParameterValue(terrainTextureIndex);
         footSteps.setParameterByName("terrain", parameterValue);
 
-        footSteps.setVolume(1.0f);
-        if (mode == 1){ //se for stealth
-            footSteps.setVolume(0.3f);
-        }
+        //footSteps.setVolume(1.0f);
+        footSteps.setParameterByName("mode", mode);
+        //if (mode == 1){ //se for stealth
+            //footSteps.setVolume(0.3f);
+        //}
 
         if (canPlayFootSteps)
             footSteps.start();
