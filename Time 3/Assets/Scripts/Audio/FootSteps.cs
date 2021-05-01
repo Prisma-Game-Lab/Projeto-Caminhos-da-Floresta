@@ -17,12 +17,18 @@ public class FootSteps : MonoBehaviour
         //footSteps.start();
     }
 
-    private void Step() //chamada pelo animator
+    private void Step(int mode) //chamada pelo animator
     {
         //Debug.Log("PISOU");
+        //Debug.Log(mode);
         int terrainTextureIndex = terrainDetector.GetActiveTerrainTextureIdx(transform.position);
         int parameterValue = textureIndexToParameterValue(terrainTextureIndex);
         footSteps.setParameterByName("terrain", parameterValue);
+
+        footSteps.setVolume(1.0f);
+        if (mode == 1){ //se for stealth
+            footSteps.setVolume(0.3f);
+        }
 
         if (canPlayFootSteps)
             footSteps.start();
