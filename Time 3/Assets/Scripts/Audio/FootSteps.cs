@@ -18,10 +18,31 @@ public class FootSteps : MonoBehaviour
     {
         //Debug.Log("PISOU");
         int terrainTextureIndex = terrainDetector.GetActiveTerrainTextureIdx(transform.position);
-        footSteps.setParameterByName("terrain", terrainTextureIndex);
-
+        int parameterValue = textureIndexToParameterValue(terrainTextureIndex);
+        footSteps.setParameterByName("terrain", parameterValue);
         footSteps.start();
+    }
 
+    private int textureIndexToParameterValue(int terrainTextureIndex)
+    {
+        switch (terrainTextureIndex){
+            case 0:
+                return 1;
+            case 1:
+                return 6;
+            case 2:
+                return 0;
+            case 3:
+                return 2;
+            case 4:
+                return 3;
+            case 5:
+                return 4;
+            case 6:
+                return 5;
+            default:
+                return 0;
+        }
     }
 
    /* private void Update() {
