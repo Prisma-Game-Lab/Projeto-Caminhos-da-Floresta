@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class FootSteps : MonoBehaviour
@@ -5,6 +6,8 @@ public class FootSteps : MonoBehaviour
     private TerrainDetector terrainDetector;
     FMOD.Studio.EventInstance footSteps;
     //private ThirdPersonController playerController;
+
+    private bool canPlayFootSteps = true;
 
     private void Awake()
     {
@@ -20,7 +23,17 @@ public class FootSteps : MonoBehaviour
         int terrainTextureIndex = terrainDetector.GetActiveTerrainTextureIdx(transform.position);
         int parameterValue = textureIndexToParameterValue(terrainTextureIndex);
         footSteps.setParameterByName("terrain", parameterValue);
-        footSteps.start();
+
+        if (canPlayFootSteps)
+            footSteps.start();
+        StartCoroutine(FootStepsCooldown());
+    }
+
+    private IEnumerator FootStepsCooldown()
+    {
+        canPlayFootSteps = false;
+        yield return new WaitForSeconds(0.3f);
+        canPlayFootSteps = true;
     }
 
     private int textureIndexToParameterValue(int terrainTextureIndex)
