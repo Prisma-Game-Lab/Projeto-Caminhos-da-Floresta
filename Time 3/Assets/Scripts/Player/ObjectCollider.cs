@@ -5,29 +5,24 @@ using TMPro;
 
 public class ObjectCollider : MonoBehaviour
 {
+    [Tooltip("Texto que é usado para mostrar mensagens na tela")]
     public TextMeshProUGUI triggerText;
+    private GameObject _Other;
+
+    [Tooltip("Tela de Fim de Jogo")]
+    public GameObject gameOverUI;
 
     public List<string> objectList = new List<string>();
 
     static private int count = 0;
-
-    private GameObject _Other;
-    public GameObject gameOverUI;
+    
 
     private bool _isTrigger = false;
-    public bool energy = true;
-    public Animator anim;
+    
+    Animator anim;
 
     FMOD.Studio.EventInstance pickItem;
     FMOD.Studio.EventInstance lightOrb;
-
-    void Start()
-    {
-        triggerText.gameObject.SetActive(false);
-        gameOverUI.SetActive(false);
-        pickItem = FMODUnity.RuntimeManager.CreateInstance("event:/pickItem");
-        lightOrb = FMODUnity.RuntimeManager.CreateInstance("event:/lightOrb");
-    }
 
     void Awake()
     {
@@ -38,7 +33,19 @@ public class ObjectCollider : MonoBehaviour
             //objectList.Add(PlayerPrefs.GetString("item_" + i));
             objectList.Remove(PlayerPrefs.GetString("item_" + i));
         }
+
+        anim = GetComponent<Animator>();
     }
+
+    void Start()
+    {
+        triggerText.gameObject.SetActive(false);
+        gameOverUI.SetActive(false);
+        pickItem = FMODUnity.RuntimeManager.CreateInstance("event:/pickItem");
+        lightOrb = FMODUnity.RuntimeManager.CreateInstance("event:/lightOrb");
+    }
+
+    
 
     void OnDestroy()
     {
