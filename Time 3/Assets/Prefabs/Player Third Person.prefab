@@ -198,7 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 7322880618745555831}
   cam: {fileID: 0}
-  anim: {fileID: 0}
+  anim: {fileID: 4412362057140643027}
   speed: 20
   stealthSpeed: 6
   turnSmoopthTime: 0.2
@@ -240,7 +240,7 @@ MonoBehaviour:
   objectList: []
   gameOverUI: {fileID: 0}
   energy: 1
-  anim: {fileID: 0}
+  anim: {fileID: 4412362057140643027}
 --- !u!1 &7322880619141983059
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,7 +401,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f04934418d5ff0541be4e06560c6a3f7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.87
+      value: -1.92
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f04934418d5ff0541be4e06560c6a3f7,
         type: 3}

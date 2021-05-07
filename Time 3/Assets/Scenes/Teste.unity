@@ -218,6 +218,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &188611328 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4412362057140643027, guid: 2d13b9e7a88219044bac928cde87945c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7322880617319656282}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &325915147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1111,10 +1117,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07442732ae4692948964056ce33085ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Object: {fileID: 1529760058}
   triggerText: {fileID: 411681343}
   objectList: []
+  gameOverUI: {fileID: 0}
   energy: 1
+  anim: {fileID: 0}
 --- !u!1 &1646974585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,6 +1158,7 @@ MonoBehaviour:
   player: {fileID: 1527087150}
   maxAngle: 45
   maxRadius: 6.4
+  multiplyBy: 0
   isInFov: 0
 --- !u!65 &1646974587
 BoxCollider:
@@ -1972,7 +1980,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2022230654}
-  m_LocalRotation: {x: 0.09897817, y: 0.000000008560947, z: -8.5152807e-10, w: 0.99508965}
+  m_LocalRotation: {x: 0.09897817, y: -0.000000008560945, z: 8.515279e-10, w: 0.99508965}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2187,6 +2195,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2011915556, guid: 2d13b9e7a88219044bac928cde87945c, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 188611328}
+    - target: {fileID: 2011915556, guid: 2d13b9e7a88219044bac928cde87945c, type: 3}
+      propertyPath: triggerText
+      value: 
+      objectReference: {fileID: 411681343}
     - target: {fileID: 7322880617801411531, guid: 2d13b9e7a88219044bac928cde87945c,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2262,6 +2278,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1734514187}
+    - target: {fileID: 7322880618745555830, guid: 2d13b9e7a88219044bac928cde87945c,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 188611328}
     - target: {fileID: 7322880618745555830, guid: 2d13b9e7a88219044bac928cde87945c,
         type: 3}
       propertyPath: stealthSpeed
