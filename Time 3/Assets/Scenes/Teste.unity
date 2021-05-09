@@ -1099,29 +1099,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1634406844 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7322880618745555825, guid: 2d13b9e7a88219044bac928cde87945c,
-    type: 3}
-  m_PrefabInstance: {fileID: 7322880617319656282}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1634406845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1634406844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07442732ae4692948964056ce33085ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerText: {fileID: 411681343}
-  objectList: []
-  gameOverUI: {fileID: 0}
-  energy: 1
-  anim: {fileID: 0}
 --- !u!1 &1646974585
 GameObject:
   m_ObjectHideFlags: 0
@@ -2195,28 +2172,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2011915556, guid: 2d13b9e7a88219044bac928cde87945c, type: 3}
-      propertyPath: anim
+    - target: {fileID: 1634406845, guid: 2d13b9e7a88219044bac928cde87945c, type: 3}
+      propertyPath: triggerText
       value: 
-      objectReference: {fileID: 188611328}
+      objectReference: {fileID: 411681343}
     - target: {fileID: 2011915556, guid: 2d13b9e7a88219044bac928cde87945c, type: 3}
       propertyPath: triggerText
       value: 
       objectReference: {fileID: 411681343}
-    - target: {fileID: 7322880617801411531, guid: 2d13b9e7a88219044bac928cde87945c,
+    - target: {fileID: 6032834051066156954, guid: 2d13b9e7a88219044bac928cde87945c,
         type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: anim
       value: 
-      objectReference: {fileID: 2100000, guid: ccbd08662a7b2cb4991c980893ac9616, type: 2}
+      objectReference: {fileID: 188611328}
     - target: {fileID: 7322880618745555825, guid: 2d13b9e7a88219044bac928cde87945c,
         type: 3}
       propertyPath: m_Name
       value: Player Third Person
-      objectReference: {fileID: 0}
-    - target: {fileID: 7322880618745555825, guid: 2d13b9e7a88219044bac928cde87945c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7322880618745555828, guid: 2d13b9e7a88219044bac928cde87945c,
         type: 3}
@@ -2278,20 +2250,5 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1734514187}
-    - target: {fileID: 7322880618745555830, guid: 2d13b9e7a88219044bac928cde87945c,
-        type: 3}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 188611328}
-    - target: {fileID: 7322880618745555830, guid: 2d13b9e7a88219044bac928cde87945c,
-        type: 3}
-      propertyPath: stealthSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7322880619329258326, guid: 2d13b9e7a88219044bac928cde87945c,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: ccbd08662a7b2cb4991c980893ac9616, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d13b9e7a88219044bac928cde87945c, type: 3}
