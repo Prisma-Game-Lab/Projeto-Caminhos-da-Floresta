@@ -54,6 +54,12 @@ ModelImporter:
   - first:
       74: -2229279732151205568
     second: Usar_melodia
+  - first:
+      74: 3374748389425109202
+    second: Caindo
+  - first:
+      74: 3374748389425109202
+    second: Pulo_descida
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -257,7 +263,7 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Pulo_subida
-      takeName: Scene
+      takeName: rig|rigAction
       internalID: 0
       firstFrame: 500
       lastFrame: 518
@@ -286,7 +292,7 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Caindo
-      takeName: Scene
+      takeName: rig|rigAction
       internalID: 0
       firstFrame: 518
       lastFrame: 520
@@ -315,9 +321,9 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Pulo_descida
-      takeName: Scene
+      takeName: rig|rigAction
       internalID: 0
-      firstFrame: 532
+      firstFrame: 527
       lastFrame: 547
       wrapMode: 0
       orientationOffsetY: 0
