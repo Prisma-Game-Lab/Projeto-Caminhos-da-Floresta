@@ -11,7 +11,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 7867752002920705120}
-    m_Position: {x: 300, y: 110, z: 0}
+    m_Position: {x: 290, y: 120, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -19,7 +19,7 @@ AnimatorStateMachine:
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
-  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ExitPosition: {x: 50, y: 170, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 7867752002920705120}
 --- !u!206 &-2010790302275684095
@@ -31,7 +31,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: -619547186965265060, guid: cb23c44dfaa22334ea45488e386abe6a,
+    m_Motion: {fileID: 2921659094232983241, guid: f04934418d5ff0541be4e06560c6a3f7,
       type: 3}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
@@ -40,7 +40,7 @@ BlendTree:
     m_DirectBlendParameter: Horizontal
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -2649715123880138745, guid: cb23c44dfaa22334ea45488e386abe6a,
+    m_Motion: {fileID: -2649715123880138745, guid: f04934418d5ff0541be4e06560c6a3f7,
       type: 3}
     m_Threshold: 0.33333334
     m_Position: {x: 0, y: 1}
@@ -49,7 +49,7 @@ BlendTree:
     m_DirectBlendParameter: Horizontal
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -3295590042688330175, guid: cb23c44dfaa22334ea45488e386abe6a,
+    m_Motion: {fileID: -3295590042688330175, guid: f04934418d5ff0541be4e06560c6a3f7,
       type: 3}
     m_Threshold: 0.6666667
     m_Position: {x: 0, y: 0.5}
@@ -78,19 +78,19 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Vertical
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Jump
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
