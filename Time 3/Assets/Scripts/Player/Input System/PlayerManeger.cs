@@ -5,11 +5,13 @@ using UnityEngine;
 public class PlayerManeger : MonoBehaviour
 {
     InputManeger inputManeger;
+    CameraManeger cameraManeger;
     PlayerLocomotion playerLocomotion;
     // Start is called before the first frame update
     void Start()
     {
         inputManeger = GetComponent<InputManeger>();
+        cameraManeger = FindObjectOfType<CameraManeger>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
     }
 
@@ -22,5 +24,10 @@ public class PlayerManeger : MonoBehaviour
     private void FixedUpdate()
     {
         playerLocomotion.HandleAllMovement();
+    }
+
+    private void LateUpdate()
+    {
+        cameraManeger.HandleAllCameraMovement();
     }
 }
