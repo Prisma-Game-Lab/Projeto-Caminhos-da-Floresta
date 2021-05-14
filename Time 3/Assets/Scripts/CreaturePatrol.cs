@@ -29,6 +29,7 @@ public class CreaturePatrol : MonoBehaviour
     private bool _waiting;
     private bool _patrolForward;
     private float _waitTimer;
+    public Animator anim; 
 
     private void Start()
     {
@@ -61,11 +62,13 @@ public class CreaturePatrol : MonoBehaviour
                 {
                     _waiting = true;
                     _waitTimer = 0f;
+                    anim.SetBool("Walk", false);
                 }
                 else
                 {
                     ChangePatrolPoint();
                     SetDestination();
+                    anim.SetBool("Walk", true);
                 }
             }
 
@@ -79,6 +82,7 @@ public class CreaturePatrol : MonoBehaviour
 
                     ChangePatrolPoint();
                     SetDestination();
+                    anim.SetBool("Walk", true);
                 }
             }
         }
