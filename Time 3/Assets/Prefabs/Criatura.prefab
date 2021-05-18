@@ -215,6 +215,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   flee: 0
+  anim: {fileID: 5048432236316269448}
 --- !u!1 &575191927717847927
 GameObject:
   m_ObjectHideFlags: 0

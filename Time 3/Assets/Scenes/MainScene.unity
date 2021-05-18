@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2921749, g: 0.299971, b: 0.3479412, a: 1}
+  m_IndirectSpecularColor: {r: 0.29217583, g: 0.2999715, b: 0.34794158, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5520,11 +5520,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 56037766720574521, guid: cd742cca8cd97a64b87bf569249b447f,
         type: 3}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 2065470074}
-    - target: {fileID: 56037766720574521, guid: cd742cca8cd97a64b87bf569249b447f,
-        type: 3}
       propertyPath: _patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 42511176}
@@ -6017,7 +6012,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2022230654}
-  m_LocalRotation: {x: 0.09897817, y: 0.000000008560945, z: -8.515279e-10, w: 0.99508965}
+  m_LocalRotation: {x: 0.09897817, y: -0.000000008560947, z: 8.5152807e-10, w: 0.99508965}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6311,12 +6306,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugDrawRadius: 1
---- !u!95 &2065470074 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5048432236316269448, guid: cd742cca8cd97a64b87bf569249b447f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1877375820}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2073611572 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 226647386770502202, guid: 6077cdc83ce471e46b4c5204ff0c14de,
