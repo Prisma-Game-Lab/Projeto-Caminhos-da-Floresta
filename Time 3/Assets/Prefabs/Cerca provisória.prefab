@@ -93,7 +93,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3122583921113064516
 GameObject:
@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 3122583921531625000}
   - component: {fileID: 3122583921531625001}
   - component: {fileID: 3122583921531625006}
+  - component: {fileID: 392442847}
   m_Layer: 0
   m_Name: cerca pau 4
   m_TagString: Untagged
@@ -222,8 +223,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &392442847
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3122583921531625004}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 1.0000005, z: 1.0000002}
+  m_Center: {x: -0.000015258789, y: 0.000030517578, z: -0.0000038146973}
 --- !u!1 &3122583921704835592
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,7 +331,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3122583922068922173
 GameObject:
@@ -412,5 +426,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 5, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
