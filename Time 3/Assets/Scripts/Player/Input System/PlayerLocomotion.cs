@@ -10,7 +10,9 @@ public class PlayerLocomotion : MonoBehaviour
     Rigidbody playerRigidbody;
 
     public float movementSpeed = 7;
+    public float steathSpeed = 5;
     public float rotationSpeed = 15;
+    public bool isSteath = false;
 
     private void Awake()
     {
@@ -31,7 +33,15 @@ public class PlayerLocomotion : MonoBehaviour
         moveDirection = moveDirection + cameraObj.right * inputManeger.horizontalInput;
         moveDirection.Normalize();
         moveDirection.y = 0;
-        moveDirection = moveDirection * movementSpeed;
+
+        if(isSteath == true)
+        {
+            moveDirection = moveDirection * steathSpeed;
+        }
+        else
+        {
+            moveDirection = moveDirection * movementSpeed;
+        }
 
         Vector3 movementVelocity = moveDirection;
         playerRigidbody.velocity = movementVelocity;
