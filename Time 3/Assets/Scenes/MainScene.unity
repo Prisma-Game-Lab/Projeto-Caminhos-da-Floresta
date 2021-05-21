@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.29217583, g: 0.2999715, b: 0.34794158, a: 1}
+  m_IndirectSpecularColor: {r: 0.2921749, g: 0.299971, b: 0.3479412, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2176,6 +2176,80 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugDrawRadius: 1
+--- !u!1001 &625889000
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8020215381846592266, guid: 592b4d604abb27d4084f5e93eefcade9,
+        type: 3}
+      propertyPath: m_Name
+      value: FlautaVFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020215381846592266, guid: 592b4d604abb27d4084f5e93eefcade9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326359266233027232, guid: 592b4d604abb27d4084f5e93eefcade9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326359266233027232, guid: 592b4d604abb27d4084f5e93eefcade9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 185.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326359266233027232, guid: 592b4d604abb27d4084f5e93eefcade9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 106.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326359266233027232, guid: 592b4d604abb27d4084f5e93eefcade9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 163.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326359266233027232, guid: 592b4d604abb27d4084f5e93eefcade9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326359266233027232, guid: 592b4d604abb27d4084f5e93eefcade9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326359266233027232, guid: 592b4d604abb27d4084f5e93eefcade9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326359266233027232, guid: 592b4d604abb27d4084f5e93eefcade9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326359266233027232, guid: 592b4d604abb27d4084f5e93eefcade9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326359266233027232, guid: 592b4d604abb27d4084f5e93eefcade9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326359266233027232, guid: 592b4d604abb27d4084f5e93eefcade9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 592b4d604abb27d4084f5e93eefcade9, type: 3}
 --- !u!1001 &639559008
 PrefabInstance:
   m_ObjectHideFlags: 0
