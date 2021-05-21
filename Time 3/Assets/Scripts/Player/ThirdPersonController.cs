@@ -28,6 +28,13 @@ public class ThirdPersonController : MonoBehaviour
     [HideInInspector]
     public bool isMoving;
 
+    FMOD.Studio.EventInstance flautaSound;
+
+    void Awake()
+    {
+        flautaSound = FMODUnity.RuntimeManager.CreateInstance("event:/flauta");
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -83,6 +90,7 @@ public class ThirdPersonController : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0)){
             anim.SetTrigger("Usar_flauta");
+            flautaSound.start();
         }
 
     }
