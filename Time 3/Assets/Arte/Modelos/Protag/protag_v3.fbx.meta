@@ -24,6 +24,12 @@ ModelImporter:
   - first:
       74: 7875520293960127342
     second: Pegar_item
+  - first:
+      74: 2586412752155472037
+    second: tocar_flauta
+  - first:
+      74: 5128380556521050704
+    second: pegar_flauta
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -202,6 +208,64 @@ ModelImporter:
       internalID: 0
       firstFrame: 550
       lastFrame: 580
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: tocar_flauta
+      takeName: rig|rigAction
+      internalID: 0
+      firstFrame: 682
+      lastFrame: 730
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: pegar_flauta
+      takeName: rig|rigAction
+      internalID: 0
+      firstFrame: 595
+      lastFrame: 620
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
