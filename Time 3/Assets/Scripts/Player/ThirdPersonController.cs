@@ -81,5 +81,9 @@ public class ThirdPersonController : MonoBehaviour
             anim.SetTrigger("Jump");
         }
 
+        if(Input.GetMouseButtonDown(0)){
+            anim.SetTrigger("Usar_flauta");
+        }
+
     }
 }
