@@ -123,6 +123,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &539309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 539310}
+  - component: {fileID: 539311}
+  m_Layer: 0
+  m_Name: "parede invis\xEDvel (7)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &539310
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539309}
+  m_LocalRotation: {x: -0.043831248, y: -0.50471103, z: 0.01899284, w: 0.8619657}
+  m_LocalPosition: {x: 576.6, y: 51.09999, z: 410.8}
+  m_LocalScale: {x: 1.2665002, y: 2.2120695, z: 1.2665002}
+  m_Children: []
+  m_Father: {fileID: 1553286314}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: -3.233, y: -60.826, z: 4.422}
+--- !u!65 &539311
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539309}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 22.0928, z: 91.89978}
+  m_Center: {x: -1.1982257, y: 2.7117555, z: -6.114427}
 --- !u!4 &14160142 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3122583921113064519, guid: 8cb366a1a260be74a8616fbc38b8b717,
@@ -603,6 +647,50 @@ Transform:
   m_Father: {fileID: 1367290292}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &86620675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 86620676}
+  - component: {fileID: 86620677}
+  m_Layer: 0
+  m_Name: "parede invis\xEDvel (4)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &86620676
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86620675}
+  m_LocalRotation: {x: -0.03410411, y: 0.60836494, z: -0.03344871, w: 0.79221857}
+  m_LocalPosition: {x: 541.1, y: 39.300003, z: 159.3}
+  m_LocalScale: {x: 1.2665001, y: 2.2120695, z: 1.2665004}
+  m_Children: []
+  m_Father: {fileID: 1553286314}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: -0.764, y: 75.079, z: -5.423}
+--- !u!65 &86620677
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86620675}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 22.0928, z: 85.75905}
+  m_Center: {x: -1.1982244, y: 2.7117555, z: -3.0440316}
 --- !u!1001 &110638852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1748,6 +1836,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 562913592}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &339970950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 339970951}
+  - component: {fileID: 339970952}
+  m_Layer: 0
+  m_Name: "parede invis\xEDvel (9)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &339970951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339970950}
+  m_LocalRotation: {x: -0.022543898, y: 0.8173923, z: -0.042115066, w: 0.57409763}
+  m_LocalPosition: {x: -20.7, y: 22.6, z: -57.2}
+  m_LocalScale: {x: 1.2665004, y: 2.2120695, z: 1.2665001}
+  m_Children: []
+  m_Father: {fileID: 1553286314}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 2.462, y: 109.73, z: -4.893}
+--- !u!65 &339970952
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339970950}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 41.327145, z: 123.9285}
+  m_Center: {x: -1.1968031, y: -6.905464, z: -75.67686}
 --- !u!1001 &357844538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2852,6 +2984,50 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0, y: 4.015448, z: 4.3986206}
   m_Center: {x: -1.1983482, y: 1.5077238, z: 0.22191015}
+--- !u!1 &512395706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 512395707}
+  - component: {fileID: 512395708}
+  m_Layer: 0
+  m_Name: "parede invis\xEDvel (1)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &512395707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512395706}
+  m_LocalRotation: {x: -0.029450262, y: 0.70649326, z: -0.03761101, w: 0.7061058}
+  m_LocalPosition: {x: 229, y: 39.300003, z: 88.4}
+  m_LocalScale: {x: 1.2665004, y: 2.2120695, z: 1.2665001}
+  m_Children: []
+  m_Father: {fileID: 1553286314}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0.662, y: 90, z: -5.436}
+--- !u!65 &512395708
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512395706}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 22.0928, z: 95.83343}
+  m_Center: {x: -1.1982565, y: 2.7117558, z: 13.027329}
 --- !u!1001 &517793586
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3015,6 +3191,50 @@ Transform:
   m_Father: {fileID: 75176332}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &544997122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 544997123}
+  - component: {fileID: 544997124}
+  m_Layer: 0
+  m_Name: "parede invis\xEDvel (3)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &544997123
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544997122}
+  m_LocalRotation: {x: -0.03187664, y: 0.6581754, z: -0.035577893, w: 0.75134766}
+  m_LocalPosition: {x: 437.89996, y: 29.199997, z: 133.9}
+  m_LocalScale: {x: 1.2665002, y: 2.2120695, z: 1.2665002}
+  m_Children: []
+  m_Father: {fileID: 1553286314}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -0.061, y: 82.439, z: -5.476}
+--- !u!65 &544997124
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544997122}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 22.0928, z: 96.145325}
+  m_Center: {x: -1.1982263, y: 2.7117555, z: 7.3718038}
 --- !u!1 &555067957
 GameObject:
   m_ObjectHideFlags: 0
@@ -3158,7 +3378,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592069972}
-  m_LocalRotation: {x: 0.09897817, y: -0.000000008560947, z: 8.5152807e-10, w: 0.99508965}
+  m_LocalRotation: {x: 0.09897817, y: 0.000000008560945, z: -8.515279e-10, w: 0.99508965}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4502,6 +4722,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cb366a1a260be74a8616fbc38b8b717, type: 3}
+--- !u!1 &761899504
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 761899505}
+  - component: {fileID: 761899506}
+  m_Layer: 0
+  m_Name: "parede invis\xEDvel (8)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &761899505
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761899504}
+  m_LocalRotation: {x: -0.030609451, y: -0.8384035, z: 0.036673803, w: 0.5429526}
+  m_LocalPosition: {x: 476, y: 51.5, z: 402.8}
+  m_LocalScale: {x: 1.2665002, y: 2.2120695, z: 1.2665002}
+  m_Children: []
+  m_Father: {fileID: 1553286314}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 1.619, y: -114.072, z: 5.232}
+--- !u!65 &761899506
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761899504}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 22.0928, z: 78.12641}
+  m_Center: {x: -1.1982183, y: 2.7117558, z: -13.001192}
 --- !u!1 &767516984
 GameObject:
   m_ObjectHideFlags: 0
@@ -6751,7 +7015,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1367290292}
   m_Layer: 0
-  m_Name: Cercas
+  m_Name: Barreiras
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6770,6 +7034,7 @@ Transform:
   m_Children:
   - {fileID: 77888655}
   - {fileID: 964293135}
+  - {fileID: 1553286314}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7281,6 +7546,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugDrawRadius: 1
+--- !u!1 &1430372770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1430372771}
+  - component: {fileID: 1430372772}
+  m_Layer: 0
+  m_Name: "parede invis\xEDvel (5)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1430372771
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430372770}
+  m_LocalRotation: {x: -0.04583113, y: 0.16407882, z: -0.013468988, w: 0.98529}
+  m_LocalPosition: {x: 610.1, y: 32.59999, z: 221.5}
+  m_LocalScale: {x: 1.2665002, y: 2.2120695, z: 1.2665001}
+  m_Children: []
+  m_Father: {fileID: 1553286314}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: -4.927, y: 19.012, z: -2.392}
+--- !u!65 &1430372772
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430372770}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 22.0928, z: 125.171394}
+  m_Center: {x: -1.1982242, y: 2.7117555, z: 10.521361}
 --- !u!1 &1431840640
 GameObject:
   m_ObjectHideFlags: 0
@@ -8254,6 +8563,46 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cb366a1a260be74a8616fbc38b8b717, type: 3}
+--- !u!1 &1553286313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1553286314}
+  m_Layer: 0
+  m_Name: "Paredes invis\xEDveis"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1553286314
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553286313}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2024819060}
+  - {fileID: 512395707}
+  - {fileID: 2045407174}
+  - {fileID: 544997123}
+  - {fileID: 86620676}
+  - {fileID: 1430372771}
+  - {fileID: 1623897164}
+  - {fileID: 539310}
+  - {fileID: 761899505}
+  - {fileID: 339970951}
+  m_Father: {fileID: 1367290292}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1554712684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8450,6 +8799,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2038909306}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1623897163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1623897164}
+  - component: {fileID: 1623897165}
+  m_Layer: 0
+  m_Name: "parede invis\xEDvel (6)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1623897164
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623897163}
+  m_LocalRotation: {x: -0.047768295, y: -0.1139526, z: -0.00030999383, w: 0.9923371}
+  m_LocalPosition: {x: 624.9, y: 43.5, z: 337.2}
+  m_LocalScale: {x: 1.2665002, y: 2.2120695, z: 1.2665001}
+  m_Children: []
+  m_Father: {fileID: 1553286314}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: -5.444, y: -13.13, z: 0.591}
+--- !u!65 &1623897165
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623897163}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 22.0928, z: 91.89978}
+  m_Center: {x: -1.1982257, y: 2.7117555, z: -6.114427}
 --- !u!1 &1640395574
 GameObject:
   m_ObjectHideFlags: 0
@@ -8814,6 +9207,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 20c6f9bb00cd863439d5b03844da89ba, type: 2}
+    - target: {fileID: 7322880617801411530, guid: 2d13b9e7a88219044bac928cde87945c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7322880618745555825, guid: 2d13b9e7a88219044bac928cde87945c,
         type: 3}
       propertyPath: m_Name
@@ -10779,6 +11177,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2130024987}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2024819059
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2024819060}
+  - component: {fileID: 2024819061}
+  m_Layer: 0
+  m_Name: "parede invis\xEDvel"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2024819060
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024819059}
+  m_LocalRotation: {x: -0.029450262, y: 0.70649326, z: -0.03761101, w: 0.7061058}
+  m_LocalPosition: {x: 123.2, y: 13.900002, z: 11.5}
+  m_LocalScale: {x: 1.2665004, y: 2.2120695, z: 1.2665001}
+  m_Children: []
+  m_Father: {fileID: 1553286314}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0.662, y: 90, z: -5.436}
+--- !u!65 &2024819061
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024819059}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 22.0928, z: 69.07863}
+  m_Center: {x: -1.1982499, y: 2.7117558, z: -0.3498934}
 --- !u!1 &2030099197
 GameObject:
   m_ObjectHideFlags: 0
@@ -11244,6 +11686,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1445211048}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2045407173
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2045407174}
+  - component: {fileID: 2045407175}
+  m_Layer: 0
+  m_Name: "parede invis\xEDvel (2)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2045407174
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045407173}
+  m_LocalRotation: {x: -0.03705305, y: 0.5324443, z: -0.030149264, w: 0.84511614}
+  m_LocalPosition: {x: 341.5, y: 34.300003, z: 109.2}
+  m_LocalScale: {x: 1.2665, y: 2.2120695, z: 1.2665004}
+  m_Children: []
+  m_Father: {fileID: 1553286314}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -1.749, y: 64.503, z: -5.19}
+--- !u!65 &2045407175
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045407173}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 22.0928, z: 74.724945}
+  m_Center: {x: -1.1982275, y: 2.7117555, z: 2.4729998}
 --- !u!1001 &2045803223
 PrefabInstance:
   m_ObjectHideFlags: 0
