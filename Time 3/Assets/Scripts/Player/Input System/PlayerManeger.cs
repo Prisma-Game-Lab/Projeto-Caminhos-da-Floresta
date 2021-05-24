@@ -6,12 +6,16 @@ public class PlayerManeger : MonoBehaviour
 {
     InputManeger inputManeger;
     CameraManeger cameraManeger;
+    Animator anim;
     PlayerLocomotion playerLocomotion;
+
+    public bool isInteracting;
     // Start is called before the first frame update
     void Start()
     {
         inputManeger = GetComponent<InputManeger>();
         cameraManeger = FindObjectOfType<CameraManeger>();
+        anim = GetComponent<Animator>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
     }
 
@@ -29,5 +33,6 @@ public class PlayerManeger : MonoBehaviour
     private void LateUpdate()
     {
         cameraManeger.HandleAllCameraMovement();
+        isInteracting = anim.GetBool("isInteracting");
     }
 }
