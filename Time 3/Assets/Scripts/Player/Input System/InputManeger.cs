@@ -19,6 +19,8 @@ public class InputManeger : MonoBehaviour
     public float horizontalInput;
 
     public bool stealth_Input;
+    public bool jump_Input;
+    public bool interact_Input;
 
     private void Awake()
     {
@@ -36,6 +38,10 @@ public class InputManeger : MonoBehaviour
 
             playerControls.PlayerActions.Stealth.performed += i => stealth_Input = true;
             playerControls.PlayerActions.Stealth.canceled += i => stealth_Input = false;
+
+            playerControls.PlayerActions.Jump.performed += i => jump_Input = true;
+
+            playerControls.PlayerActions.Interact.performed += i => interact_Input = true;
         }
 
         playerControls.Enable();
@@ -50,8 +56,9 @@ public class InputManeger : MonoBehaviour
     {
         HandeMovementInput();
         HandleSteathInput();
-        //HandleJumpInput();
+        HandleJumpInput();
         //handleActionInput();
+        HandleInteractInput();
     }
 
     private void HandeMovementInput()
@@ -75,5 +82,23 @@ public class InputManeger : MonoBehaviour
         {
             playerLocomotion.isSteath = false;
         }
+    }
+
+    private void HandleJumpInput()
+    {
+        if (jump_Input)
+        {
+            jump_Input = false;
+            playerLocomotion.HandleJumping();
+        }
+            
+    }
+
+    private void HandleInteractInput()
+    {
+        if (interact_Input)
+            interact_Input = false;
+
+
     }
 }

@@ -5,6 +5,7 @@ using TMPro;
 
 public class ObjectCollider : MonoBehaviour
 {
+    InputManeger inputmaneger;
     [Tooltip("Texto que é usado para mostrar mensagens na tela")]
     public TextMeshProUGUI triggerText;
     private GameObject _Other;
@@ -60,7 +61,7 @@ public class ObjectCollider : MonoBehaviour
     {
         if (_isTrigger)
         {
-            PressZ();
+            Interact();
         }
     }
 
@@ -90,7 +91,7 @@ public class ObjectCollider : MonoBehaviour
         }
     }
 
-    void PressZ()
+    void Interact()
     {
         if (Input.GetKeyDown("e") && !_Other.CompareTag("Pedestal"))
         {
@@ -115,9 +116,11 @@ public class ObjectCollider : MonoBehaviour
                 //orbLight.start();
                 _Other.GetComponent<OrbController>().orb.SetActive(true);
                 objectList.Remove("Offering");
-                //triggerText.text = "Voce entregou a oferenda, o orbe se acende!";
+
+                triggerText.text = "Voce entregou a oferenda, o orbe se acende!";
                 _isTrigger = false;
-                //triggerText.gameObject.SetActive(true);
+
+                triggerText.gameObject.SetActive(true);
                 gameOverUI.SetActive(true);
                 Time.timeScale = 0;
                 StartCoroutine(DisableText());

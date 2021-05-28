@@ -63,6 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSteath: 0
   isGrounded: 0
+  isJumping: 0
   movementSpeed: 7
   steathSpeed: 5
   rotationSpeed: 15
@@ -73,6 +74,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
+  jumpHeigh: 3
+  gravityIntensity: -15
 --- !u!114 &1491805448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,6 +109,8 @@ MonoBehaviour:
   verticalInput: 0
   horizontalInput: 0
   stealth_Input: 0
+  jump_Input: 0
+  interact_Input: 0
 --- !u!114 &1137136773284394130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,21 +152,6 @@ MonoBehaviour:
   triggerText: {fileID: 0}
   gameOverUI: {fileID: 0}
   objectList: []
---- !u!114 &6841286547176210431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6313822968854547675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07442732ae4692948964056ce33085ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerText: {fileID: 0}
-  gameOverUI: {fileID: 0}
-  objectList: []
 --- !u!114 &8060860319685196154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26ce2cbe97f0a544a44dba1fdfda265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
 --- !u!1 &7322880618745555825
 GameObject:
   m_ObjectHideFlags: 0
