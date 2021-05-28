@@ -5,7 +5,11 @@ using UnityEngine;
 public class SoundRadius : MonoBehaviour
 {
     public float maxRadius;
+    private Animator animator;
 
+    private void Start() {
+        animator = GetComponentInChildren<Animator>();
+    }
     private void Update()
     {
         InRadius(this.transform, maxRadius);
@@ -29,7 +33,7 @@ public class SoundRadius : MonoBehaviour
                 if (overlaps[i].transform.gameObject.tag == "Creature")
                 {
                     Vector3 directionbetween = (overlaps[i].transform.position - checkingObject.position).normalized;
-                    directionbetween.y *= 0; //Zerando o Y do vetor da posição entre o inimigo e o objeto a ser checado para ignorar o fator de altura
+                    directionbetween.y *= 0; //Zerando o Y do vetor da posiï¿½ï¿½o entre o inimigo e o objeto a ser checado para ignorar o fator de altura
 
                     Ray ray = new Ray(checkingObject.position, overlaps[i].transform.position - checkingObject.position);
                     RaycastHit hit;
@@ -38,9 +42,9 @@ public class SoundRadius : MonoBehaviour
                     {
                         if (hit.transform.gameObject.tag == "Creature")
                         {
-                            /* A cria está dentro do raio */
+                            /* A cria estï¿½ dentro do raio */
 
-                            //Debug.Log("A craitura está dentro do raio");
+                            //Debug.Log("A craitura estï¿½ dentro do raio");
                             if (Input.GetMouseButtonDown(0))
                             {
                                 checkingObject.gameObject.GetComponent<ObjectCollider>().objectList.Add("Offering");
