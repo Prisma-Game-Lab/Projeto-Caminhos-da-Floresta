@@ -15,6 +15,7 @@ public class PlayerLocomotion : MonoBehaviour
     public bool isSteath = false;
     public bool isGrounded;
     public bool isJumping;
+    public bool isInteracting;
 
     [Header("Movement Speeds")]
     public float movementSpeed = 7;
@@ -59,6 +60,8 @@ public class PlayerLocomotion : MonoBehaviour
     {
         if (isJumping)
             return;
+        if (isInteracting)
+            return;
 
         moveDirection = cameraObj.forward * inputManeger.verticalInput;
         moveDirection = moveDirection + cameraObj.right * inputManeger.horizontalInput;
@@ -81,6 +84,8 @@ public class PlayerLocomotion : MonoBehaviour
     private void HandleRotation()
     {
         if (isJumping)
+            return;
+        if (isInteracting)
             return;
 
         Vector3 targetDirection = Vector3.zero;
@@ -147,5 +152,12 @@ public class PlayerLocomotion : MonoBehaviour
             playerVelovity.y = jumpingVelocity;
             playerRigidbody.velocity = playerVelovity;
         }
+    }
+
+    public void HandleInteracting()
+    {
+        Debug.Log("Apertou o botão para pegar item");
+        animManeger.anim.SetBool("isInteracting", true);
+        animManeger.PlayeTargetAnimation("GetItem", false);
     }
 }

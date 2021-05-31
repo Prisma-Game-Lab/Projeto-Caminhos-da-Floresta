@@ -97,8 +97,9 @@ public class InputManeger : MonoBehaviour
     private void HandleInteractInput()
     {
         if (interact_Input)
+        {
             interact_Input = false;
-
-
+            playerLocomotion.HandleInteracting();
+        }
     }
 }
