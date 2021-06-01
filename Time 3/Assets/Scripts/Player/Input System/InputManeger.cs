@@ -58,7 +58,6 @@ public class InputManeger : MonoBehaviour
         HandleSteathInput();
         HandleJumpInput();
         //handleActionInput();
-        HandleInteractInput();
     }
 
     private void HandeMovementInput()
@@ -94,7 +93,7 @@ public class InputManeger : MonoBehaviour
             
     }
 
-    private void HandleInteractInput()
+    public void HandleInteractInput()
     {
         if (interact_Input)
         {

@@ -9,8 +9,8 @@ public class PlayerManeger : MonoBehaviour
     Animator anim;
     PlayerLocomotion playerLocomotion;
 
-    public bool isInteracting;
-    // Start is called before the first frame update
+    //public bool isInteracting;
+
     void Start()
     {
         inputManeger = GetComponent<InputManeger>();
@@ -19,7 +19,6 @@ public class PlayerManeger : MonoBehaviour
         playerLocomotion = GetComponent<PlayerLocomotion>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         inputManeger.HandleAllInputs();
@@ -33,7 +32,7 @@ public class PlayerManeger : MonoBehaviour
     private void LateUpdate()
     {
         cameraManeger.HandleAllCameraMovement();
-        isInteracting = anim.GetBool("isInteracting");
+        playerLocomotion.isInteracting = anim.GetBool("isInteracting");
         playerLocomotion.isJumping = anim.GetBool("isJumping");
         anim.SetBool("isGrounded", playerLocomotion.isGrounded);
     }

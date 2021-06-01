@@ -5,7 +5,7 @@ using TMPro;
 
 public class ObjectCollider : MonoBehaviour
 {
-    InputManeger inputmaneger;
+    
     [Tooltip("Texto que é usado para mostrar mensagens na tela")]
     public TextMeshProUGUI triggerText;
     private GameObject _Other;
@@ -20,7 +20,8 @@ public class ObjectCollider : MonoBehaviour
 
     private bool _isTrigger = false;
     
-    Animator anim;
+    InputManeger inputmaneger;
+    PlayerLocomotion playerLocomotion;
 
     FMOD.Studio.EventInstance pickItem;
     FMOD.Studio.EventInstance lightOrb;
@@ -35,7 +36,8 @@ public class ObjectCollider : MonoBehaviour
             objectList.Remove(PlayerPrefs.GetString("item_" + i));
         }
 
-        anim = GetComponent<Animator>();
+        inputmaneger = GetComponent<InputManeger>();
+        playerLocomotion = GetComponent<PlayerLocomotion>();
     }
 
     void Start()
@@ -57,7 +59,7 @@ public class ObjectCollider : MonoBehaviour
         }
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (_isTrigger)
         {
@@ -93,10 +95,10 @@ public class ObjectCollider : MonoBehaviour
 
     void Interact()
     {
-        if (Input.GetKeyDown("e") && !_Other.CompareTag("Pedestal"))
+        inputmaneger.HandleInteractInput();
+        if (playerLocomotion.isInteracting && !_Other.CompareTag("Pedestal"))
         {
             pickItem.start();
-            anim.SetTrigger("Pegar_item");
 
             objectList.Add(_Other.name);
             _Other.SetActive(false);
@@ -111,7 +113,7 @@ public class ObjectCollider : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown("e"))
+            if (playerLocomotion.isInteracting)
             {
                 //orbLight.start();
                 _Other.GetComponent<OrbController>().orb.SetActive(true);

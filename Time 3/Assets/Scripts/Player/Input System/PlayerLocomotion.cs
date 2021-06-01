@@ -49,7 +49,7 @@ public class PlayerLocomotion : MonoBehaviour
     {
         HandleFallingAndLanding();
 
-        if (playerManeger.isInteracting)
+        if (isInteracting)
             return;
 
         HandleMovement();
@@ -114,10 +114,12 @@ public class PlayerLocomotion : MonoBehaviour
 
         if(isGrounded == false && isJumping == false)
         {
-            if(playerManeger.isInteracting == false)
+
+            animManeger.PlayeTargetAnimation("Falling", true);
+            /*if (isInteracting == false)
             {
                 animManeger.PlayeTargetAnimation("Falling", true);
-            }
+            }*/
         }
 
         inAirTimer = inAirTimer + Time.deltaTime;
@@ -126,7 +128,7 @@ public class PlayerLocomotion : MonoBehaviour
 
         if (Physics.SphereCast(rayCastOrigin, 0.2f, -Vector3.up, out hit, groundLayer))
         {
-            if(!isGrounded && !playerManeger.isInteracting)
+            if(!isGrounded /*&& !isInteracting*/)
             {
                 animManeger.PlayeTargetAnimation("Land", true);
             }
@@ -142,7 +144,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     public void HandleJumping()
     {
-        if (isGrounded)
+        if (isGrounded && !isInteracting)
         {
             animManeger.anim.SetBool("isJumping", true);
             animManeger.PlayeTargetAnimation("Jump", false);
@@ -156,7 +158,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     public void HandleInteracting()
     {
-        Debug.Log("Apertou o botão para pegar item");
+        isInteracting = true;
         animManeger.anim.SetBool("isInteracting", true);
         animManeger.PlayeTargetAnimation("GetItem", false);
     }
