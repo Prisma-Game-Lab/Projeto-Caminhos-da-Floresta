@@ -21,6 +21,7 @@ public class InputManeger : MonoBehaviour
     public bool stealth_Input;
     public bool jump_Input;
     public bool interact_Input;
+    public bool playFlute_input;
 
     private void Awake()
     {
@@ -42,6 +43,8 @@ public class InputManeger : MonoBehaviour
             playerControls.PlayerActions.Jump.performed += i => jump_Input = true;
 
             playerControls.PlayerActions.Interact.performed += i => interact_Input = true;
+
+            playerControls.PlayerActions.PlayFlute.performed += i => playFlute_input = true;
         }
 
         playerControls.Enable();
@@ -57,7 +60,7 @@ public class InputManeger : MonoBehaviour
         HandeMovementInput();
         HandleSteathInput();
         HandleJumpInput();
-        //handleActionInput();
+        handleActionInput();
     }
 
     private void HandeMovementInput()
@@ -99,6 +102,15 @@ public class InputManeger : MonoBehaviour
         {
             interact_Input = false;
             playerLocomotion.HandleInteracting();
+        }
+    }
+
+    public void handleActionInput()
+    {
+        if (playFlute_input)
+        {
+            playFlute_input = false;
+            playerLocomotion.HandleFlute();
         }
     }
 }

@@ -241,6 +241,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""PlayFlute"",
+                    ""type"": ""Button"",
+                    ""id"": ""bab3f7d4-2670-4e5b-ac67-be5be1b3b8a0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -309,6 +317,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8fc95a7f-8ad5-468e-aba7-f04b078f343f"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayFlute"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""75150dd3-b611-455a-a4f4-f91246e44e46"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayFlute"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -324,6 +354,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_PlayerActions_Stealth = m_PlayerActions.FindAction("Stealth", throwIfNotFound: true);
         m_PlayerActions_Jump = m_PlayerActions.FindAction("Jump", throwIfNotFound: true);
         m_PlayerActions_Interact = m_PlayerActions.FindAction("Interact", throwIfNotFound: true);
+        m_PlayerActions_PlayFlute = m_PlayerActions.FindAction("PlayFlute", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -417,6 +448,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerActions_Stealth;
     private readonly InputAction m_PlayerActions_Jump;
     private readonly InputAction m_PlayerActions_Interact;
+    private readonly InputAction m_PlayerActions_PlayFlute;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
@@ -424,6 +456,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Stealth => m_Wrapper.m_PlayerActions_Stealth;
         public InputAction @Jump => m_Wrapper.m_PlayerActions_Jump;
         public InputAction @Interact => m_Wrapper.m_PlayerActions_Interact;
+        public InputAction @PlayFlute => m_Wrapper.m_PlayerActions_PlayFlute;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -442,6 +475,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Interact.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnInteract;
+                @PlayFlute.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnPlayFlute;
+                @PlayFlute.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnPlayFlute;
+                @PlayFlute.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnPlayFlute;
             }
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -455,6 +491,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @PlayFlute.started += instance.OnPlayFlute;
+                @PlayFlute.performed += instance.OnPlayFlute;
+                @PlayFlute.canceled += instance.OnPlayFlute;
             }
         }
     }
@@ -469,5 +508,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnStealth(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnPlayFlute(InputAction.CallbackContext context);
     }
 }

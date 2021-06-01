@@ -16,6 +16,7 @@ public class PlayerLocomotion : MonoBehaviour
     public bool isGrounded;
     public bool isJumping;
     public bool isInteracting;
+    public bool isplayingFlute;
 
     [Header("Movement Speeds")]
     public float movementSpeed = 7;
@@ -123,7 +124,7 @@ public class PlayerLocomotion : MonoBehaviour
 
         
         //if (Physics.SphereCast(rayCastOrigin, 0.2f, -Vector3.up, out RaycastHit hit, groundLayer))
-        if(Physics.Raycast(rayCastOrigin, -Vector3.up, 0.6f, groundLayer))
+        if(Physics.Raycast(rayCastOrigin, -Vector3.up, 1.2f, groundLayer))
         {
             if(!isGrounded)
             {
@@ -158,5 +159,15 @@ public class PlayerLocomotion : MonoBehaviour
         isInteracting = true;
         animManeger.anim.SetBool("isInteracting", true);
         animManeger.PlayeTargetAnimation("GetItem", false);
+    }
+
+    public void HandleFlute()
+    {
+        isplayingFlute = true;
+        animManeger.anim.SetBool("isplayingFlute", true);
+        if(inputManeger.verticalInput != 0 && inputManeger.horizontalInput != 0)
+            animManeger.PlayeTargetAnimation("IdleFlute", false);
+        else
+            animManeger.PlayeTargetAnimation("WalkingFlute", false);
     }
 }
