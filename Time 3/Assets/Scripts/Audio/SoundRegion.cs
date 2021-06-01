@@ -6,12 +6,13 @@ public class SoundRegion : MonoBehaviour
 {
     FMOD.Studio.EventInstance ambience;
     public GameObject player;
+    public int ambienceType = 0;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        ambience = FMODUnity.RuntimeManager.CreateInstance("event:/ambiencia/teste (dist manual)");
+        ambience = FMODUnity.RuntimeManager.CreateInstance(ambienceIntToName());
         //ambience.start();
     }
 
@@ -67,6 +68,24 @@ public class SoundRegion : MonoBehaviour
         //Debug.Log(dist);
 
         ambience.setParameterByName("PlayerDistance", dist);
+    }
+
+    private string ambienceIntToName()
+    {
+        switch (ambienceType){
+            case 0: //aberto
+                return "event:/ambiencia/aberto";
+            case 1: //aberto + rio
+                return "event:/ambiencia/aberto + rio";
+            case 2: //fechado
+                return "event:/ambiencia/fechado";
+            case 3: //vento arvore
+                return "event:/ambiencia/vento arvore";
+            case 4: //ventro montanha
+                return "event:/ambiencia/vento montanha";
+            default:
+                return "event:/ambiencia/aberto";
+        }
     }
 
 
