@@ -108,7 +108,6 @@ public class PlayerLocomotion : MonoBehaviour
 
     private void HandleFallingAndLanding()
     {
-        RaycastHit hit;
         Vector3 rayCastOrigin = transform.position;
         rayCastOrigin.y = rayCastOrigin.y + raycastHeighOffSet;
 
@@ -116,19 +115,17 @@ public class PlayerLocomotion : MonoBehaviour
         {
 
             animManeger.PlayeTargetAnimation("Falling", true);
-            /*if (isInteracting == false)
-            {
-                animManeger.PlayeTargetAnimation("Falling", true);
-            }*/
         }
 
         inAirTimer = inAirTimer + Time.deltaTime;
         playerRigidbody.AddForce(transform.forward * leapingVelocity);
         playerRigidbody.AddForce(-Vector3.up * fallingVelocity * inAirTimer);
 
-        if (Physics.SphereCast(rayCastOrigin, 0.2f, -Vector3.up, out hit, groundLayer))
+        
+        //if (Physics.SphereCast(rayCastOrigin, 0.2f, -Vector3.up, out RaycastHit hit, groundLayer))
+        if(Physics.Raycast(rayCastOrigin, -Vector3.up, 0.6f, groundLayer))
         {
-            if(!isGrounded /*&& !isInteracting*/)
+            if(!isGrounded)
             {
                 animManeger.PlayeTargetAnimation("Land", true);
             }

@@ -64,17 +64,18 @@ MonoBehaviour:
   isSteath: 0
   isGrounded: 0
   isJumping: 0
+  isInteracting: 0
   movementSpeed: 7
   steathSpeed: 5
   rotationSpeed: 15
   inAirTimer: 0
-  leapingVelocity: 0
-  fallingVelocity: 0
+  leapingVelocity: 3
+  fallingVelocity: 33
   raycastHeighOffSet: 0.5
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
-  jumpHeigh: 3
+  jumpHeigh: 5
   gravityIntensity: -15
 --- !u!114 &1491805448
 MonoBehaviour:
@@ -88,7 +89,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dde6e012e3be1c43b938d4254af3edc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInteracting: 0
 --- !u!114 &1491805449
 MonoBehaviour:
   m_ObjectHideFlags: 0
