@@ -12,7 +12,6 @@ public class ObjectCollider : MonoBehaviour
     static private int count = 0;
 
     private GameObject _Other;
-    public GameObject gameOverUI;
 
     private bool _isTrigger = false;
     public bool energy = true;
@@ -24,7 +23,6 @@ public class ObjectCollider : MonoBehaviour
     void Start()
     {
         triggerText.gameObject.SetActive(false);
-        gameOverUI.SetActive(false);
         pickItem = FMODUnity.RuntimeManager.CreateInstance("event:/pickItem");
         lightOrb = FMODUnity.RuntimeManager.CreateInstance("event:/lightOrb");
     }
@@ -111,7 +109,6 @@ public class ObjectCollider : MonoBehaviour
                 //triggerText.text = "Voce entregou a oferenda, o orbe se acende!";
                 _isTrigger = false;
                 //triggerText.gameObject.SetActive(true);
-                gameOverUI.SetActive(true);
                 Time.timeScale = 0;
                 StartCoroutine(DisableText());
             }
