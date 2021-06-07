@@ -527,7 +527,6 @@ GameObject:
   - component: {fileID: 575191927016316484}
   - component: {fileID: 5032965872761604317}
   - component: {fileID: 575191927016316485}
-  - component: {fileID: 575191927016316480}
   - component: {fileID: 56037766720574521}
   m_Layer: 7
   m_Name: Creature
@@ -652,21 +651,6 @@ MonoBehaviour:
   maxRadius: 11.59
   multiplyBy: 5
   isInFov: 0
---- !u!114 &575191927016316480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575191927016316486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad5ddc763e4df71449b8f86aa783bce0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  present: Flower
-  Offering: {fileID: 575191927717847927}
 --- !u!114 &56037766720574521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -681,11 +665,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _patrolwaiting: 0
   _totalWaitTime: 5
+  maxSeenTime: 0.5
+  maxHearTime: 3
   _switchProbability: 0
   _patrolPoints:
   - {fileID: 1664721025}
   - {fileID: 900744843}
-  flee: 0
+  walkingSpeed: 20
+  runningSpeed: 35
+  alertness: 0
   anim: {fileID: 5048432236316269448}
 --- !u!1 &575191927717847927
 GameObject:

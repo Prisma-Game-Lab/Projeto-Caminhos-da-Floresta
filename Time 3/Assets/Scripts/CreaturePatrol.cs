@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.AI;
 
 public class CreaturePatrol : MonoBehaviour
 {
+    public enum AlertnessLevel
+    {
+        distracted, suspicious, running
+    }
     //Dictates whether the aget waits on each note
     [SerializeField]
     bool _patrolwaiting;
@@ -12,6 +17,11 @@ public class CreaturePatrol : MonoBehaviour
     //The total time it wait at each node.
     [SerializeField]
     float _totalWaitTime = 3f;
+
+    // The total time the creature needs to see the player to flee
+    public float maxSeenTime = 3f;
+    // The total time the creature needs to hear the player to become alert
+    public float maxHearTime = 3f;
 
     //The probability of switching direction
     [SerializeField]
@@ -21,76 +31,123 @@ public class CreaturePatrol : MonoBehaviour
     [SerializeField]
     List<Waypoint> _patrolPoints;
 
+    public float walkingSpeed = 3f;
+    public float runningSpeed = 5f;
     //Private variables for base behaviour
-    public bool flee = false;
+    public AlertnessLevel alertness = AlertnessLevel.distracted;
     private NavMeshAgent _navMeshAgent;
     private int _currrentPatrolIndex;
     private bool _travelling;
     private bool _waiting;
     private bool _patrolForward;
     private float _waitTimer;
-    public Animator anim; 
+    private float _seenTimer = 0f;
+    private float _heardTimer = 0f;
+    public Animator anim;
+    private FOVDetection _fov;
+    private Transform _playerTransform;
 
     private void Start()
     {
         _navMeshAgent = this.GetComponent<NavMeshAgent>();
+        _fov = GetComponent<FOVDetection>();
+        _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
-        if (_navMeshAgent == null)
-        {
-            Debug.LogError(" The NavMeshAgent is not attached to " + gameObject.name);
-        }
-        else
-        {
-            if (_patrolPoints != null && _patrolPoints.Count >= 2)
-            {
-                _currrentPatrolIndex = 0;
-                SetDestination();
-            }
-        }
+        Assert.IsNotNull(_navMeshAgent, "creature missing navMeshAgent");
+        Assert.IsNotNull(_navMeshAgent, "creature missing FOVDetection");
+        Assert.IsNotNull(_playerTransform, "couldn't find Player");
+
+        Assert.IsNotNull(_patrolPoints, "patrol points no set");
+        Assert.IsTrue(_patrolPoints.Count >= 2, "creature needs at least 2 patrol points");
+
+        _currrentPatrolIndex = 0;
+        SetDestination();
+
     }
 
     private void Update()
     {
-        if(flee == false)
-        {
-            if (_travelling && _navMeshAgent.remainingDistance <= 1f)
-            {
-                _travelling = false;
+        if(_fov.isInFov){
+            _seenTimer += Time.deltaTime;
+        }
 
-                //If were going to wait, then wait
-                if (_patrolwaiting)
-                {
-                    _waiting = true;
-                    _waitTimer = 0f;
-                    anim.SetBool("Walk", false);
-                }
-                else
-                {
-                    ChangePatrolPoint();
-                    SetDestination();
-                    anim.SetBool("Walk", true);
-                }
+        if(_heardTimer > maxHearTime){
+            if(alertness == AlertnessLevel.distracted){
+                alertness = AlertnessLevel.suspicious;
             }
+            else{
+                alertness = AlertnessLevel.running;
+            }
+            _heardTimer = 0f;
+        }
 
-            //Instead if were waiting
-            if (_waiting)
+        if(_seenTimer > maxSeenTime){
+            alertness = AlertnessLevel.running;
+            _seenTimer = 0f;
+        }
+
+        switch(alertness){
+            case AlertnessLevel.distracted:
+                RegularPatrol();
+            break;
+            case AlertnessLevel.running:
+                Flee();
+            break;
+        }
+    }
+
+    private void RegularPatrol()
+    {
+        if (_travelling && _navMeshAgent.remainingDistance <= 1f)
+        {
+            _travelling = false;
+
+            //If were going to wait, then wait
+            if (_patrolwaiting)
             {
-                _waitTimer += Time.deltaTime;
-                if (_waitTimer >= _totalWaitTime)
-                {
-                    _waiting = false;
+                _waiting = true;
+                _waitTimer = 0f;
+                anim.SetBool("Walk", false);
+            }
+            else
+            {
+                ChangePatrolPoint();
+                SetDestination();
+                anim.SetBool("Walk", true);
+            }
+        }
 
-                    ChangePatrolPoint();
-                    SetDestination();
-                    anim.SetBool("Walk", true);
-                }
+        //Instead if were waiting
+        if (_waiting)
+        {
+            _waitTimer += Time.deltaTime;
+            if (_waitTimer >= _totalWaitTime)
+            {
+                _waiting = false;
+
+                ChangePatrolPoint();
+                SetDestination();
+                anim.SetBool("Walk", true);
             }
         }
     }
 
+    private void Flee()
+    {
+        float distance = Vector3.Distance(transform.position, _playerTransform.position);
+
+
+        Vector3 dirToPlayer = transform.position - _playerTransform.position;
+
+        Vector3 newPos = transform.position + dirToPlayer;
+
+        _navMeshAgent.SetDestination(newPos);
+
+    }
+
     private void SetDestination()
     {
-        if(_patrolPoints != null)
+        if (_patrolPoints != null)
         {
             Vector3 targetVector = _patrolPoints[_currrentPatrolIndex].transform.position;
             _navMeshAgent.SetDestination(targetVector);
@@ -105,7 +162,7 @@ public class CreaturePatrol : MonoBehaviour
     /// </sumary>
     private void ChangePatrolPoint()
     {
-        if(UnityEngine.Random.Range(0f, 1f) <= _switchProbability)
+        if (UnityEngine.Random.Range(0f, 1f) <= _switchProbability)
         {
             _patrolForward = !_patrolForward;
         }
@@ -116,7 +173,7 @@ public class CreaturePatrol : MonoBehaviour
         }
         else
         {
-            if(--_currrentPatrolIndex < 0)
+            if (--_currrentPatrolIndex < 0)
             {
                 _currrentPatrolIndex = _patrolPoints.Count - 1;
             }
