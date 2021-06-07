@@ -10,11 +10,13 @@ public class FootSteps : MonoBehaviour
 
     public float footStepsCooldownTime;
 
+
     private void Awake()
     {
         //playerController = gameObject.GetComponent<ThirdPersonController>();
         terrainDetector = new TerrainDetector();
         footSteps = FMODUnity.RuntimeManager.CreateInstance("event:/footSteps");
+
         //footSteps.start();
     }
 

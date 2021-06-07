@@ -6,7 +6,7 @@ using TMPro;
 public class ObjectCollider : MonoBehaviour
 {
     
-    [Tooltip("Texto que é usado para mostrar mensagens na tela")]
+    [Tooltip("Texto que ï¿½ usado para mostrar mensagens na tela")]
     public TextMeshProUGUI triggerText;
     private GameObject _Other;
 
@@ -18,6 +18,8 @@ public class ObjectCollider : MonoBehaviour
     static private int count = 0;
     
 
+    private GameObject _Other;
+
     private bool _isTrigger = false;
     
     InputManeger inputmaneger;
@@ -25,6 +27,13 @@ public class ObjectCollider : MonoBehaviour
 
     FMOD.Studio.EventInstance pickItem;
     FMOD.Studio.EventInstance lightOrb;
+
+    void Start()
+    {
+        triggerText.gameObject.SetActive(false);
+        pickItem = FMODUnity.RuntimeManager.CreateInstance("event:/pickItem");
+        lightOrb = FMODUnity.RuntimeManager.CreateInstance("event:/lightOrb");
+    }
 
     void Awake()
     {
@@ -121,9 +130,7 @@ public class ObjectCollider : MonoBehaviour
 
                 triggerText.text = "Voce entregou a oferenda, o orbe se acende!";
                 _isTrigger = false;
-
-                triggerText.gameObject.SetActive(true);
-                gameOverUI.SetActive(true);
+                //triggerText.gameObject.SetActive(true);
                 Time.timeScale = 0;
                 StartCoroutine(DisableText());
             }
