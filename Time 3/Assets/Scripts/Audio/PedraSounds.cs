@@ -22,6 +22,7 @@ public class PedraSounds : MonoBehaviour
     private void Step() //chamada pelo animator
     {
         passo.start();
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(passo, GetComponent<Transform>(), GetComponent<Rigidbody>());
     }
 
     private float DistanceToPlayer()
