@@ -897,6 +897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  creaturePatrolScript: {fileID: 56037766720574521}
 --- !u!1001 &6126805712380339133
 PrefabInstance:
   m_ObjectHideFlags: 0
