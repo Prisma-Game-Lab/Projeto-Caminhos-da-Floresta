@@ -20,8 +20,6 @@ public class PedraSounds : MonoBehaviour
         fugindo = FMODUnity.RuntimeManager.CreateInstance("event:/criaturaPedra/fugindo");
         susto = FMODUnity.RuntimeManager.CreateInstance("event:/criaturaPedra/susto");
 
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(susto,  transform.parent.GetComponent<Transform>(),  transform.parent.GetComponent<Rigidbody>());
-
         currentAlertLevel = creaturePatrolScript.alertness;
     }
 
@@ -36,7 +34,6 @@ public class PedraSounds : MonoBehaviour
     {
         passo.start();
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(passo,  transform.parent.GetComponent<Transform>(),  transform.parent.GetComponent<Rigidbody>());
-
     }
 
     private float DistanceToPlayer()
@@ -95,5 +92,12 @@ public class PedraSounds : MonoBehaviour
                 FMODUnity.RuntimeManager.AttachInstanceToGameObject(fugindo,  transform.parent.GetComponent<Transform>(),  transform.parent.GetComponent<Rigidbody>());
             }
         }
+    }
+
+    public void PlaySusto()
+    {
+        Debug.Log("SUSTO!");
+        susto.start();
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(susto, transform.parent.GetComponent<Transform>(),  transform.parent.GetComponent<Rigidbody>());
     }
 }
