@@ -50,7 +50,9 @@ public class SoundRadius : MonoBehaviour
                             {
                                 transform.gameObject.GetComponent<ObjectCollider>().objectList.Add("Offering");
 
-                                hit.transform.gameObject.SetActive(false);
+                                //recado do amiguinho do som: nao usar SetActive(false), dificulta a minha vida. Obrigado!
+                                //hit.transform.gameObject.SetActive(false);
+                                hit.transform.gameObject.GetComponentInChildren<PedraSounds>().PlaySusto();
                             }
                         }
                     }

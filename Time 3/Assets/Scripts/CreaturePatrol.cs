@@ -88,9 +88,11 @@ public class CreaturePatrol : MonoBehaviour
 
         switch(alertness){
             case AlertnessLevel.distracted:
+                _navMeshAgent.speed = walkingSpeed;
                 RegularPatrol();
             break;
             case AlertnessLevel.running:
+                _navMeshAgent.speed=runningSpeed;
                 Flee();
             break;
         }

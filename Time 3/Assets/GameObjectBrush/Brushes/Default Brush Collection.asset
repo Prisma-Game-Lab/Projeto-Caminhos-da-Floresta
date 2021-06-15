@@ -233,6 +233,28 @@ MonoBehaviour:
       m_Bits: 4294967295
     isTagFilteringEnabled: 0
     tagFilter: 
+  - brushObject: {fileID: 9057515606947230356, guid: 0d94f05ba5ce20144b592fde9209a10c,
+      type: 3}
+    usePrefabs: 1
+    allowIntercollision: 0
+    alignToSurface: 0
+    randomizeXRotation: 0
+    randomizeYRotation: 1
+    randomizeZRotation: 0
+    parentContainer: {fileID: 0}
+    density: 5
+    brushSize: 5
+    minScale: 50
+    maxScale: 50
+    offsetFromPivot: {x: 0, y: 0, z: 0}
+    rotOffsetFromPivot: {x: 0, y: 0, z: 0}
+    minSlope: 0
+    maxSlope: 360
+    layerFilter:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    isTagFilteringEnabled: 0
+    tagFilter: 
   primarySelectedBrush:
     brushObject: {fileID: 1390137877176944061, guid: 6077cdc83ce471e46b4c5204ff0c14de,
       type: 3}
