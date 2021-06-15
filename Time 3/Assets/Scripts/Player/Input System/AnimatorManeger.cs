@@ -23,64 +23,20 @@ public class AnimatorManeger : MonoBehaviour
 
     public void UpdateAnimatorValues(float horizontalMovement, float verticalMovement, bool isSteath)
     {
-        //Animation Snapping
-        float snappedHorizontal;
-        float snappedVertical;
 
-        #region Horizontal
-        if (horizontalMovement > 0 && horizontalMovement < 0.55f)
-        {
-            snappedHorizontal = 0.5f;
+        if( horizontalMovement >= 0.5 || horizontalMovement <= -0.5 || verticalMovement >= 0.5 || verticalMovement <= -0.5){
+            anim.SetBool("Walking", true);
         }
-        else if(horizontalMovement > 0.55f)
-        {
-            snappedHorizontal = 1;
-        }
-        else if (horizontalMovement < 0 && horizontalMovement > -0.55f)
-        {
-            snappedHorizontal = -0.5f;
-        }
-        else if (horizontalMovement < -0.55f)
-        {
-            snappedHorizontal = -1;
-        }
-        else
-        {
-            snappedHorizontal = 0;
-        }
-        #endregion
-
-        #region Vertical
-        if (verticalMovement > 0 && verticalMovement < 0.55f)
-        {
-            snappedVertical = 0.5f;
-        }
-        else if (verticalMovement > 0.55f)
-        {
-            snappedVertical = 1;
-        }
-        else if (verticalMovement < 0 && verticalMovement > -0.55f)
-        {
-            snappedVertical = -0.5f;
-        }
-        else if (verticalMovement < -0.55f)
-        {
-            snappedVertical = -1;
-        }
-        else
-        {
-            snappedVertical = 0;
-        }
-        #endregion
-
-        if (isSteath)
-        {
-            snappedHorizontal = horizontal;
-            snappedVertical = 2f;
-            //anim.SetBool("Stealth", true);
+        else{
+            anim.SetBool("Walking", false);
         }
 
-        anim.SetFloat(horizontal, snappedHorizontal, 0.1f, Time.deltaTime);
-        anim.SetFloat(vertical, snappedVertical, 0.1f, Time.deltaTime);
+        if(isSteath){
+
+            anim.SetBool("Stealth", true);
+        }
+        else{
+            anim.SetBool("Stealth", false);
+        }
     }
 }

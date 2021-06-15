@@ -16,9 +16,6 @@ public class ObjectCollider : MonoBehaviour
     public List<string> objectList = new List<string>();
 
     static private int count = 0;
-    
-
-    private GameObject _Other;
 
     private bool _isTrigger = false;
     
@@ -27,13 +24,6 @@ public class ObjectCollider : MonoBehaviour
 
     FMOD.Studio.EventInstance pickItem;
     FMOD.Studio.EventInstance lightOrb;
-
-    void Start()
-    {
-        triggerText.gameObject.SetActive(false);
-        pickItem = FMODUnity.RuntimeManager.CreateInstance("event:/pickItem");
-        lightOrb = FMODUnity.RuntimeManager.CreateInstance("event:/lightOrb");
-    }
 
     void Awake()
     {
