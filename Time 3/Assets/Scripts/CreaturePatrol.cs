@@ -14,9 +14,6 @@ public class CreaturePatrol : MonoBehaviour
     [SerializeField]
     bool _patrolwaiting;
 
-    //The total time it wait at each node.
-    [SerializeField]
-    List <float> _totalWaitTimes;
 
     // The total time the creature needs to see the player to flee
     public float maxSeenTime = 3f;
@@ -26,6 +23,10 @@ public class CreaturePatrol : MonoBehaviour
     //The probability of switching direction
     [SerializeField]
     float _switchProbability;
+
+    //The total time it wait at each node.
+    [SerializeField]
+    List <float> _totalWaitTimes;
 
     //The list of all patrol nodes to visit
     [SerializeField]
