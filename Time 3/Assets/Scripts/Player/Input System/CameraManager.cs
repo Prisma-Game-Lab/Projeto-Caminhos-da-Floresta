@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraManeger : MonoBehaviour
+public class CameraManager : MonoBehaviour
 {
-    InputManeger inputManeger;
+    InputManager inputManager;
 
     [HideInInspector] public Transform targetTransform;           // the target the camera will follow
-    [Tooltip("Objeto que é o Pivot da Camera")]
+    [Tooltip("Objeto que ï¿½ o Pivot da Camera")]
     public Transform cameraPivot;               // objext that is the pivor of the camera
     [Tooltip("Camera principal que ira seguir o player")]
     public Transform cameraTransform;           // transform of the actual camera;
@@ -18,7 +18,7 @@ public class CameraManeger : MonoBehaviour
 
     [Tooltip("Raio da camera antes de colidir com um objeto")]
     public float cameraCollisionRadius = 0.2f;
-    [Tooltip("O quanto a camera ira se afastar de um objeto após colidir com ele")]
+    [Tooltip("O quanto a camera ira se afastar de um objeto apï¿½s colidir com ele")]
     public float cameraCollisionOffSet = 0.2f;
     public float minCollisionOffSet = 0.2f;
     public float cameraFollowSpeed = 0.2f;
@@ -32,8 +32,8 @@ public class CameraManeger : MonoBehaviour
 
     private void Awake()
     {
-        targetTransform = FindObjectOfType<PlayerManeger>().transform;
-        inputManeger = FindObjectOfType<InputManeger>();
+        targetTransform = FindObjectOfType<PlayerManager>().transform;
+        inputManager = FindObjectOfType<InputManager>();
         cameraTransform = Camera.main.transform;
         defaultPosition = cameraTransform.localPosition.z;
     }
@@ -53,8 +53,8 @@ public class CameraManeger : MonoBehaviour
 
     private void RotateCamera()
     {
-        lookAngle = lookAngle + (inputManeger.cameraInputX * cameraLookSpeed);
-        pivotAngle = pivotAngle - (inputManeger.cameraInputY * cameraPivotSpeed);
+        lookAngle = lookAngle + (inputManager.cameraInputX * cameraLookSpeed);
+        pivotAngle = pivotAngle - (inputManager.cameraInputY * cameraPivotSpeed);
         pivotAngle = Mathf.Clamp(pivotAngle, minPivotAngle, maxPivotAngle);
 
         Vector3 rotation = Vector3.zero;
@@ -80,7 +80,7 @@ public class CameraManeger : MonoBehaviour
             float distance = Vector3.Distance(cameraPivot.position, hit.point);
             targetPosition = targetPosition - (distance - cameraCollisionOffSet);
         }
-        
+
         if(Mathf.Abs(targetPosition) < minCollisionOffSet)
         {
             targetPosition = targetPosition - minCollisionOffSet;

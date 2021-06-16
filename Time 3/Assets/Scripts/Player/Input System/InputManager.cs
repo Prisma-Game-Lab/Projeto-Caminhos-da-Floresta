@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputManeger : MonoBehaviour
+public class InputManager : MonoBehaviour
 {
     PlayerControls playerControls;
     PlayerLocomotion playerLocomotion;
-    AnimatorManeger animManeger;
+    AnimatorManager animManager;
 
     public Vector2 movementInput;
     public Vector2 cameraInput;
@@ -25,7 +25,7 @@ public class InputManeger : MonoBehaviour
 
     private void Awake()
     {
-        animManeger = GetComponent<AnimatorManeger>();
+        animManager = GetComponent<AnimatorManager>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
     }
     private void OnEnable()
@@ -71,7 +71,7 @@ public class InputManeger : MonoBehaviour
         cameraInputX = cameraInput.x;
 
         moveAmount = Mathf.Clamp01(Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
-        animManeger.UpdateAnimatorValues(0, moveAmount, playerLocomotion.isSteath);
+        animManager.UpdateAnimatorValues(0, moveAmount, playerLocomotion.isSteath);
     }
 
     private void HandleSteathInput()
@@ -93,7 +93,7 @@ public class InputManeger : MonoBehaviour
             jump_Input = false;
             playerLocomotion.HandleJumping();
         }
-            
+
     }
 
     public void HandleInteractInput()

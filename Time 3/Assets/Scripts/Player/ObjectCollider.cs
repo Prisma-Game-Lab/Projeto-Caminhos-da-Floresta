@@ -5,7 +5,7 @@ using TMPro;
 
 public class ObjectCollider : MonoBehaviour
 {
-    
+
     [Tooltip("Texto que � usado para mostrar mensagens na tela")]
     public TextMeshProUGUI triggerText;
     private GameObject _Other;
@@ -18,8 +18,8 @@ public class ObjectCollider : MonoBehaviour
     static private int count = 0;
 
     private bool _isTrigger = false;
-    
-    InputManeger inputmaneger;
+
+    InputManager inputManager;
     PlayerLocomotion playerLocomotion;
 
     FMOD.Studio.EventInstance pickItem;
@@ -35,7 +35,7 @@ public class ObjectCollider : MonoBehaviour
             objectList.Remove(PlayerPrefs.GetString("item_" + i));
         }
 
-        inputmaneger = GetComponent<InputManeger>();
+        inputManager = GetComponent<InputManager>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
     }
 
@@ -47,7 +47,7 @@ public class ObjectCollider : MonoBehaviour
         lightOrb = FMODUnity.RuntimeManager.CreateInstance("event:/lightOrb");
     }
 
-    
+
 
     void OnDestroy()
     {
@@ -94,7 +94,7 @@ public class ObjectCollider : MonoBehaviour
 
     void Interact()
     {
-        inputmaneger.HandleInteractInput();
+        inputManager.HandleInteractInput();
         if (playerLocomotion.isInteracting && !_Other.CompareTag("Pedestal"))
         {
             pickItem.start();

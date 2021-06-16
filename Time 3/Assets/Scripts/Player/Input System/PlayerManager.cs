@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    InputManager inputManeger;
-    CameraManager cameraManeger;
+    InputManager inputManager;
+    CameraManager cameraManager;
     Animator anim;
     PlayerLocomotion playerLocomotion;
 

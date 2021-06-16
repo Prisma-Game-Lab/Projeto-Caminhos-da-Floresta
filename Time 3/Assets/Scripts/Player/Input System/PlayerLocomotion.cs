@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerLocomotion : MonoBehaviour
 {
-    PlayerManeger playerManeger;
-    AnimatorManeger animManeger;
-    InputManeger inputManeger;
+    PlayerManager playerManager;
+    AnimatorManager animManager;
+    InputManager inputManager;
     Vector3 moveDirection;
     Transform cameraObj;
     Rigidbody playerRigidbody;
@@ -39,9 +39,9 @@ public class PlayerLocomotion : MonoBehaviour
 
     private void Awake()
     {
-        playerManeger = GetComponent<PlayerManeger>();
-        animManeger = GetComponent<AnimatorManeger>();
-        inputManeger = GetComponent<InputManeger>();
+        playerManager = GetComponent<PlayerManager>();
+        animManager = GetComponent<AnimatorManager>();
+        inputManager = GetComponent<InputManager>();
         playerRigidbody = GetComponent<Rigidbody>();
         cameraObj = Camera.main.transform;
     }
@@ -64,8 +64,8 @@ public class PlayerLocomotion : MonoBehaviour
         if (isInteracting)
             return;
 
-        moveDirection = cameraObj.forward * inputManeger.verticalInput;
-        moveDirection = moveDirection + cameraObj.right * inputManeger.horizontalInput;
+        moveDirection = cameraObj.forward * inputManager.verticalInput;
+        moveDirection = moveDirection + cameraObj.right * inputManager.horizontalInput;
         moveDirection.Normalize();
         moveDirection.y = 0;
 
@@ -91,8 +91,8 @@ public class PlayerLocomotion : MonoBehaviour
 
         Vector3 targetDirection = Vector3.zero;
 
-        targetDirection = cameraObj.forward * inputManeger.verticalInput;
-        targetDirection = targetDirection + cameraObj.right * inputManeger.horizontalInput;
+        targetDirection = cameraObj.forward * inputManager.verticalInput;
+        targetDirection = targetDirection + cameraObj.right * inputManager.horizontalInput;
         targetDirection.Normalize();
         targetDirection.y = 0;
 
@@ -115,20 +115,20 @@ public class PlayerLocomotion : MonoBehaviour
         if(isGrounded == false && isJumping == false)
         {
 
-            animManeger.PlayeTargetAnimation("Falling", true);
+            animManager.PlayeTargetAnimation("Falling", true);
         }
 
         inAirTimer = inAirTimer + Time.deltaTime;
         playerRigidbody.AddForce(transform.forward * leapingVelocity);
         playerRigidbody.AddForce(-Vector3.up * fallingVelocity * inAirTimer);
 
-        
+
         //if (Physics.SphereCast(rayCastOrigin, 0.2f, -Vector3.up, out RaycastHit hit, groundLayer))
         if(Physics.Raycast(rayCastOrigin, -Vector3.up, 1.2f, groundLayer))
         {
             if(!isGrounded)
             {
-                animManeger.PlayeTargetAnimation("Land", true);
+                animManager.PlayeTargetAnimation("Land", true);
             }
 
             inAirTimer = 0;
@@ -144,8 +144,8 @@ public class PlayerLocomotion : MonoBehaviour
     {
         if (isGrounded && !isInteracting)
         {
-            animManeger.anim.SetBool("isJumping", true);
-            animManeger.PlayeTargetAnimation("Jump", false);
+            animManager.anim.SetBool("isJumping", true);
+            animManager.PlayeTargetAnimation("Jump", false);
 
             float jumpingVelocity = Mathf.Sqrt(-2 * gravityIntensity * jumpHeigh);
             Vector3 playerVelovity = moveDirection;
@@ -157,17 +157,17 @@ public class PlayerLocomotion : MonoBehaviour
     public void HandleInteracting()
     {
         isInteracting = true;
-        animManeger.anim.SetBool("isInteracting", true);
-        animManeger.PlayeTargetAnimation("GetItem", false);
+        animManager.anim.SetBool("isInteracting", true);
+        animManager.PlayeTargetAnimation("GetItem", false);
     }
 
     public void HandleFlute()
     {
         isplayingFlute = true;
-        animManeger.anim.SetBool("isplayingFlute", true);
-        if(inputManeger.verticalInput != 0 && inputManeger.horizontalInput != 0)
-            animManeger.PlayeTargetAnimation("IdleFlute", false);
+        animManager.anim.SetBool("isplayingFlute", true);
+        if(inputManager.verticalInput != 0 && inputManager.horizontalInput != 0)
+            animManager.PlayeTargetAnimation("IdleFlute", false);
         else
-            animManeger.PlayeTargetAnimation("WalkingFlute", false);
+            animManager.PlayeTargetAnimation("WalkingFlute", false);
     }
 }
