@@ -21,6 +21,7 @@ public class PedraSounds : MonoBehaviour
         susto = FMODUnity.RuntimeManager.CreateInstance("event:/criaturaPedra/susto");
 
         currentAlertLevel = creaturePatrolScript.alertness;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
