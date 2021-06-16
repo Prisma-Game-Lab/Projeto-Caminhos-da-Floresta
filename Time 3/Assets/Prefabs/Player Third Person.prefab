@@ -200,7 +200,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   anim: {fileID: 0}
   speed: 20
-  stealthSpeed: 6
+  stealthSpeed: 10
   turnSmoopthTime: 0.2
   gravity: -22
   jumpForce: 2.5
@@ -238,7 +238,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerText: {fileID: 0}
   objectList: []
-  gameOverUI: {fileID: 0}
   energy: 1
   anim: {fileID: 0}
 --- !u!1 &7322880619141983059
