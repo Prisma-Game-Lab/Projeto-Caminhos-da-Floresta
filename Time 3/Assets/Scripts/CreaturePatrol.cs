@@ -16,7 +16,7 @@ public class CreaturePatrol : MonoBehaviour
 
     //The total time it wait at each node.
     [SerializeField]
-    float _totalWaitTime = 3f;
+    List <float> _totalWaitTimes;
 
     // The total time the creature needs to see the player to flee
     public float maxSeenTime = 3f;
@@ -39,7 +39,7 @@ public class CreaturePatrol : MonoBehaviour
     private int _currrentPatrolIndex;
     private bool _travelling;
     private bool _waiting;
-    private bool _patrolForward;
+    private bool _patrolForward = true;
     private float _waitTimer;
     private float _seenTimer = 0f;
     private float _heardTimer = 0f;
@@ -59,6 +59,7 @@ public class CreaturePatrol : MonoBehaviour
 
         Assert.IsNotNull(_patrolPoints, "patrol points no set");
         Assert.IsTrue(_patrolPoints.Count >= 2, "creature needs at least 2 patrol points");
+        Assert.IsTrue(_patrolPoints.Count == _totalWaitTimes.Count, "waitTimes and patrolPoints dont match!");
 
         _currrentPatrolIndex = 0;
         SetDestination();
@@ -123,7 +124,7 @@ public class CreaturePatrol : MonoBehaviour
         if (_waiting)
         {
             _waitTimer += Time.deltaTime;
-            if (_waitTimer >= _totalWaitTime)
+            if (_waitTimer >= _totalWaitTimes[_currrentPatrolIndex])
             {
                 _waiting = false;
 
@@ -180,5 +181,6 @@ public class CreaturePatrol : MonoBehaviour
                 _currrentPatrolIndex = _patrolPoints.Count - 1;
             }
         }
+        Debug.Log($"Changing patrol point to {_currrentPatrolIndex}");
     }
 }
