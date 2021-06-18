@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.29217583, g: 0.2999715, b: 0.34794158, a: 1}
+  m_IndirectSpecularColor: {r: 0.19045189, g: 0.2610991, b: 0.2827886, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1805,6 +1805,8 @@ MonoBehaviour:
   triggerText: {fileID: 0}
   gameOverUI: {fileID: 0}
   objectList: []
+  energy: 1
+  anim: {fileID: 0}
 --- !u!64 &405406818
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4747,7 +4749,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1250160953}
-  m_LocalRotation: {x: 0.1350594, y: -0.00000001476463, z: 0.0000000020125421, w: 0.9908375}
+  m_LocalRotation: {x: 0.13505942, y: 8.719026e-16, z: -1.7869098e-17, w: 0.9908375}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -6821,7 +6823,7 @@ Transform:
   m_PrefabInstance: {fileID: 1050081524}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734514184}
-  m_LocalRotation: {x: 0.117014244, y: -0.00000003417636, z: 0.000000004026784, w: 0.99313027}
+  m_LocalRotation: {x: 0.117014244, y: 0.00000003417636, z: -0.000000004026784, w: 0.99313027}
   m_LocalPosition: {x: 186.4, y: 110, z: 146}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -7109,7 +7111,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818864051}
-  m_LocalRotation: {x: 0.11701424, y: -0.000000017088176, z: 0.0000000020133915, w: 0.99313027}
+  m_LocalRotation: {x: 0.11701424, y: 0.00000001708818, z: -0.000000002013392, w: 0.99313027}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -7891,8 +7893,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2025866441}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 2022230654}
+  m_LocalRotation: {x: 0.09897817, y: 0.000000008560945, z: -8.515279e-10, w: 0.99508965}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -8333,6 +8335,100 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6077cdc83ce471e46b4c5204ff0c14de, type: 3}
+--- !u!1001 &1320648087410838880
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1556468780633504327, guid: dbe8399243461fe4b9ee61c4876db4c2,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187879203266821749, guid: dbe8399243461fe4b9ee61c4876db4c2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187879203266821749, guid: dbe8399243461fe4b9ee61c4876db4c2,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187879203266821749, guid: dbe8399243461fe4b9ee61c4876db4c2,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187879203266821749, guid: dbe8399243461fe4b9ee61c4876db4c2,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187879203266821749, guid: dbe8399243461fe4b9ee61c4876db4c2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 181.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187879203266821749, guid: dbe8399243461fe4b9ee61c4876db4c2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 109.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187879203266821749, guid: dbe8399243461fe4b9ee61c4876db4c2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 165.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187879203266821749, guid: dbe8399243461fe4b9ee61c4876db4c2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187879203266821749, guid: dbe8399243461fe4b9ee61c4876db4c2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187879203266821749, guid: dbe8399243461fe4b9ee61c4876db4c2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187879203266821749, guid: dbe8399243461fe4b9ee61c4876db4c2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187879203266821749, guid: dbe8399243461fe4b9ee61c4876db4c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187879203266821749, guid: dbe8399243461fe4b9ee61c4876db4c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187879203266821749, guid: dbe8399243461fe4b9ee61c4876db4c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201835861199209548, guid: dbe8399243461fe4b9ee61c4876db4c2,
+        type: 3}
+      propertyPath: m_Name
+      value: AltarVFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201835861199209548, guid: dbe8399243461fe4b9ee61c4876db4c2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dbe8399243461fe4b9ee61c4876db4c2, type: 3}
 --- !u!1001 &4780219834827582108
 PrefabInstance:
   m_ObjectHideFlags: 0
