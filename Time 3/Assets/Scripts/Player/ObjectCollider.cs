@@ -5,27 +5,25 @@ using TMPro;
 
 public class ObjectCollider : MonoBehaviour
 {
+
+    [Tooltip("Texto que � usado para mostrar mensagens na tela")]
     public TextMeshProUGUI triggerText;
+    private GameObject _Other;
+
+    [Tooltip("Tela de Fim de Jogo")]
+    public GameObject gameOverUI;
 
     public List<string> objectList = new List<string>();
 
     static private int count = 0;
 
-    private GameObject _Other;
-
     private bool _isTrigger = false;
-    public bool energy = true;
-    public Animator anim;
+
+    InputManager inputManager;
+    PlayerLocomotion playerLocomotion;
 
     FMOD.Studio.EventInstance pickItem;
     FMOD.Studio.EventInstance lightOrb;
-
-    void Start()
-    {
-        triggerText.gameObject.SetActive(false);
-        pickItem = FMODUnity.RuntimeManager.CreateInstance("event:/pickItem");
-        lightOrb = FMODUnity.RuntimeManager.CreateInstance("event:/lightOrb");
-    }
 
     void Awake()
     {
@@ -36,7 +34,20 @@ public class ObjectCollider : MonoBehaviour
             //objectList.Add(PlayerPrefs.GetString("item_" + i));
             objectList.Remove(PlayerPrefs.GetString("item_" + i));
         }
+
+        inputManager = GetComponent<InputManager>();
+        playerLocomotion = GetComponent<PlayerLocomotion>();
     }
+
+    void Start()
+    {
+        triggerText.gameObject.SetActive(false);
+        gameOverUI.SetActive(false);
+        pickItem = FMODUnity.RuntimeManager.CreateInstance("event:/pickItem");
+        lightOrb = FMODUnity.RuntimeManager.CreateInstance("event:/lightOrb");
+    }
+
+
 
     void OnDestroy()
     {
@@ -47,11 +58,11 @@ public class ObjectCollider : MonoBehaviour
         }
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (_isTrigger)
         {
-            PressZ();
+            Interact();
         }
     }
 
@@ -81,12 +92,14 @@ public class ObjectCollider : MonoBehaviour
         }
     }
 
-    void PressZ()
+    void Interact()
     {
-        if (Input.GetKeyDown("e") && !_Other.CompareTag("Pedestal"))
+        playerLocomotion.isInteracting = true;
+        
+        if (playerLocomotion.isInteracting && !_Other.CompareTag("Pedestal"))
         {
+            inputManager.HandleInteractInput();
             pickItem.start();
-            anim.SetTrigger("Pegar_item");
 
             objectList.Add(_Other.name);
             _Other.SetActive(false);
@@ -101,12 +114,14 @@ public class ObjectCollider : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown("e"))
+            if (playerLocomotion.isInteracting)
             {
+                inputManager.HandleDeliverInput();
                 //orbLight.start();
                 _Other.GetComponent<OrbController>().orb.SetActive(true);
                 objectList.Remove("Offering");
-                //triggerText.text = "Voce entregou a oferenda, o orbe se acende!";
+
+                triggerText.text = "Voce entregou a oferenda, o orbe se acende!";
                 _isTrigger = false;
                 //triggerText.gameObject.SetActive(true);
                 Time.timeScale = 0;

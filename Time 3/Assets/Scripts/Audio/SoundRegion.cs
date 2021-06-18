@@ -13,6 +13,7 @@ public class SoundRegion : MonoBehaviour
     void Start()
     {
         ambience = FMODUnity.RuntimeManager.CreateInstance(ambienceIntToName());
+        player = GameObject.FindGameObjectWithTag("Player");
         //ambience.start();
     }
 
