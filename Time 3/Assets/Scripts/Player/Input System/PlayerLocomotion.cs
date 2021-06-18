@@ -161,6 +161,13 @@ public class PlayerLocomotion : MonoBehaviour
         animManager.PlayeTargetAnimation("GetItem", false);
     }
 
+    public void HandleDelivering()
+    {
+        isInteracting = true;
+        animManager.anim.SetBool("isInteracting", true);
+        animManager.PlayeTargetAnimation("Deliver_Item", false);
+    }
+
     public void HandleFlute()
     {
         isplayingFlute = true;

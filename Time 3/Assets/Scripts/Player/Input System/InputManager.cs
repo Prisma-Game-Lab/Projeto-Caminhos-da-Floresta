@@ -105,6 +105,14 @@ public class InputManager : MonoBehaviour
         }
     }
 
+    public void HandleDeliverInput(){
+        if (interact_Input)
+        {
+            interact_Input = false;
+            playerLocomotion.HandleDelivering();
+        }
+    }
+
     public void handleActionInput()
     {
         if (playFlute_input)

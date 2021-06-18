@@ -94,9 +94,11 @@ public class ObjectCollider : MonoBehaviour
 
     void Interact()
     {
-        inputManager.HandleInteractInput();
+        playerLocomotion.isInteracting = true;
+        
         if (playerLocomotion.isInteracting && !_Other.CompareTag("Pedestal"))
         {
+            inputManager.HandleInteractInput();
             pickItem.start();
 
             objectList.Add(_Other.name);
@@ -114,6 +116,7 @@ public class ObjectCollider : MonoBehaviour
         {
             if (playerLocomotion.isInteracting)
             {
+                inputManager.HandleDeliverInput();
                 //orbLight.start();
                 _Other.GetComponent<OrbController>().orb.SetActive(true);
                 objectList.Remove("Offering");
