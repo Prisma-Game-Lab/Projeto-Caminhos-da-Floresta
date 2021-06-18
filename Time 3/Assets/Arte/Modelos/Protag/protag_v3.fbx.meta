@@ -63,8 +63,6 @@ ModelImporter:
   - first:
       74: -5192053545203983425
     second: Entregar_altar
-      74: -287028692193153859
-    second: Acender_orbe
   - first:
       74: 7312701689617705237
     second: Furtivo_parado
@@ -331,7 +329,7 @@ ModelImporter:
       name: Pulo_descida
       takeName: rig|rigAction
       internalID: 0
-      firstFrame: 527
+      firstFrame: 530
       lastFrame: 547
       wrapMode: 0
       orientationOffsetY: 0
