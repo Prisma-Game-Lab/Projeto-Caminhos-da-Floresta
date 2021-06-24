@@ -7,9 +7,38 @@ public class SoundRadius : MonoBehaviour
 {
     public float maxRadius;
     private Animator animator;
+    private List<CreaturePatrol> creatureScripts;
+    private PlayerLocomotion locScript;
 
     private void Start() {
+        creatureScripts = new List<CreaturePatrol>();
         animator = GetComponentInChildren<Animator>();
+        var allCreatures = GameObject.FindGameObjectsWithTag("Creature");
+        foreach (var creature in allCreatures)
+        {
+            var creatureScript = creature.GetComponent<CreaturePatrol>();
+            Assert.IsNotNull(creatureScript, "Criatura esta sem script 'Creature Patrol'");
+            creatureScripts.Add(creatureScript);
+        }
+        locScript = GetComponent<PlayerLocomotion>();
+        Assert.IsNotNull(locScript, "Player sem script 'Player Locomotion'");
+    }
+    public void Step(){
+        float radius = maxRadius;
+        float value = 5.0f;
+        if(locScript.isSteath){
+            radius = 0f;
+            value = 0f;
+        }
+
+        foreach (var creature in creatureScripts)
+        {
+            var creatureTransform = creature.transform;
+            var distance = Vector3.Distance(creatureTransform.position,transform.position);
+            if(distance <= radius){
+                creature.Alert(value);
+            }
+        }
     }
     private void Update()
     {
@@ -31,10 +60,10 @@ public class SoundRadius : MonoBehaviour
         {
             if (overlaps[i] != null)
             {
-                if (overlaps[i].transform.gameObject.tag == "Creature")
+                if (overlaps[i].transform.gameObject.CompareTag("Creature"))
                 {
                     Vector3 directionbetween = (overlaps[i].transform.position - transform.position).normalized;
-                    directionbetween.y *= 0; //Zerando o Y do vetor da posi��o entre o inimigo e o objeto a ser checado para ignorar o fator de altura
+                    directionbetween.y *= 0; //Zerando o Y do vetor da posicao entre o inimigo e o objeto a ser checado para ignorar o fator de altura
 
                     Ray ray = new Ray(transform.position, overlaps[i].transform.position - transform.position);
                     RaycastHit hit;
@@ -52,6 +81,7 @@ public class SoundRadius : MonoBehaviour
 
                                 //recado do amiguinho do som: nao usar SetActive(false), dificulta a minha vida. Obrigado!
                                 //hit.transform.gameObject.SetActive(false);
+
                                 hit.transform.gameObject.GetComponentInChildren<PedraSounds>().PlaySusto();
                             }
                         }

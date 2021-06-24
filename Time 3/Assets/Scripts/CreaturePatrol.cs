@@ -67,6 +67,11 @@ public class CreaturePatrol : MonoBehaviour
 
     }
 
+    public void Alert(float value)
+    {
+        _heardTimer += value;
+    }
+
     private void Update()
     {
         if(_fov.isInFov){
@@ -138,12 +143,14 @@ public class CreaturePatrol : MonoBehaviour
 
     private void Flee()
     {
+        _waiting = false;
+        anim.SetBool("Walk", true);
         float distance = Vector3.Distance(transform.position, _playerTransform.position);
 
 
         Vector3 dirToPlayer = transform.position - _playerTransform.position;
 
-        Vector3 newPos = transform.position + dirToPlayer;
+        Vector3 newPos = transform.position + (dirToPlayer.normalized * -1000f);
 
         _navMeshAgent.SetDestination(newPos);
 
