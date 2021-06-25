@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3712983017736732563}
   - component: {fileID: 299755408234278966}
   - component: {fileID: 2579444096625968380}
-  m_Layer: 0
-  m_Name: lama02
+  m_Layer: 3
+  m_Name: lama2 p
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

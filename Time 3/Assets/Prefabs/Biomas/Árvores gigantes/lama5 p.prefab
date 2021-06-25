@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2251316968656344299}
   - component: {fileID: 2923279603463953230}
   - component: {fileID: 1113906461077794692}
-  m_Layer: 0
-  m_Name: lama05
+  m_Layer: 3
+  m_Name: lama5 p
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
