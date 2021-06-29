@@ -172,7 +172,7 @@ public class PlayerLocomotion : MonoBehaviour
     {
         isplayingFlute = true;
         animManager.anim.SetBool("isplayingFlute", true);
-        if(inputManager.verticalInput != 0 && inputManager.horizontalInput != 0)
+        if(inputManager.verticalInput == 0 && inputManager.horizontalInput == 0)
             animManager.PlayeTargetAnimation("IdleFlute", false);
         else
             animManager.PlayeTargetAnimation("WalkingFlute", false);
