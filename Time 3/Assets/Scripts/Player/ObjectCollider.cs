@@ -5,13 +5,7 @@ using TMPro;
 
 public class ObjectCollider : MonoBehaviour
 {
-
-    [Tooltip("Texto que � usado para mostrar mensagens na tela")]
-    public TextMeshProUGUI triggerText;
     private GameObject _Other;
-
-    [Tooltip("Tela de Fim de Jogo")]
-    public GameObject gameOverUI;
 
     public List<string> objectList = new List<string>();
 
@@ -41,8 +35,6 @@ public class ObjectCollider : MonoBehaviour
 
     void Start()
     {
-        triggerText.gameObject.SetActive(false);
-        gameOverUI.SetActive(false);
         pickItem = FMODUnity.RuntimeManager.CreateInstance("event:/pickItem");
         lightOrb = FMODUnity.RuntimeManager.CreateInstance("event:/lightOrb");
     }
@@ -72,14 +64,10 @@ public class ObjectCollider : MonoBehaviour
         if (_Other.CompareTag("Object") || _Other.CompareTag("Offering"))
         {
             _isTrigger = true;
-            triggerText.gameObject.SetActive(true);
-            triggerText.text = "Aperte E para interagir";
         }
         if (other.CompareTag("Pedestal") && objectList.Contains("Offering"))
         {
             _isTrigger = true;
-            triggerText.gameObject.SetActive(true);
-            triggerText.text = "Aperte E para realizar a oferenda";
         }
     }
 
@@ -87,7 +75,6 @@ public class ObjectCollider : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Object") || _Other.CompareTag("Offering"))
         {
-            triggerText.gameObject.SetActive(false);
             _isTrigger = false;
         }
     }
@@ -95,7 +82,7 @@ public class ObjectCollider : MonoBehaviour
     void Interact()
     {
         playerLocomotion.isInteracting = true;
-        
+
         if (playerLocomotion.isInteracting && !_Other.CompareTag("Pedestal"))
         {
             inputManager.HandleInteractInput();
@@ -104,28 +91,22 @@ public class ObjectCollider : MonoBehaviour
             objectList.Add(_Other.name);
             _Other.SetActive(false);
             count++;
-            if(_Other.CompareTag("Object"))
-                triggerText.text = "Voce pegou o objeto!";
-            else if (_Other.CompareTag("Offering"))
-                triggerText.text = "Voce pegou a oferenda!";
             _isTrigger = false;
-            triggerText.gameObject.SetActive(true);
             StartCoroutine(DisableText());
         }
         else
         {
             if (playerLocomotion.isInteracting)
             {
+                Debug.Log("INTERAGINDO!!");
                 inputManager.HandleDeliverInput();
                 //orbLight.start();
                 _Other.GetComponent<OrbController>().orb.SetActive(true);
                 objectList.Remove("Offering");
                 _Other.GetComponent<FXController>().Move();
 
-                triggerText.text = "Voce entregou a oferenda, o orbe se acende!";
                 _isTrigger = false;
                 //triggerText.gameObject.SetActive(true);
-                Time.timeScale = 0;
                 StartCoroutine(DisableText());
             }
         }
@@ -134,6 +115,5 @@ public class ObjectCollider : MonoBehaviour
     private IEnumerator DisableText()
     {
         yield return new WaitForSeconds(3f);
-        triggerText.gameObject.SetActive(false);
     }
 }

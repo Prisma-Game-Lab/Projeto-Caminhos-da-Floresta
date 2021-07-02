@@ -268,6 +268,7 @@ MonoBehaviour:
   - {fileID: 0}
   walkingSpeed: 20
   runningSpeed: 35
+  hideout: {fileID: 0}
   alertness: 0
   anim: {fileID: 7985180225145012554}
 --- !u!1 &575191927717847927
@@ -445,6 +446,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8466274985851756045, guid: 3b8e8b8d214d07146b411470b8057490,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3b8e8b8d214d07146b411470b8057490,
         type: 3}

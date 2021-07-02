@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 7929781842998536421}
   - component: {fileID: 7929781842998536417}
   - component: {fileID: 2909458672382275143}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: NewPedestal
   m_TagString: Pedestal
   m_Icon: {fileID: 0}
@@ -141,7 +141,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goTo: {fileID: 7929781843333553226}
-  VFX: {fileID: 7993040669141335822}
+  VFX: {fileID: 1495260798161208631}
+  speed: 2
+  _moving: 0
 --- !u!1 &7929781843333553225
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +156,7 @@ GameObject:
   - component: {fileID: 7929781843333553237}
   - component: {fileID: 7929781843333553236}
   - component: {fileID: 7929781843333553227}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,6 +321,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: altar_orbe
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79696a4c25a11d4995714fb23c265eb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e79696a4c25a11d4995714fb23c265eb, type: 3}
 --- !u!1 &4078405976655440236 stripped
@@ -348,7 +355,7 @@ PrefabInstance:
     - target: {fileID: 1556468780633504327, guid: dbe8399243461fe4b9ee61c4876db4c2,
         type: 3}
       propertyPath: EmissionModule.rateOverDistance.scalar
-      value: 7
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3187879203266821749, guid: dbe8399243461fe4b9ee61c4876db4c2,
         type: 3}
@@ -405,19 +412,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4295464304783570895, guid: dbe8399243461fe4b9ee61c4876db4c2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6201835861199209548, guid: dbe8399243461fe4b9ee61c4876db4c2,
         type: 3}
       propertyPath: m_Name
       value: AltarVFX
       objectReference: {fileID: 0}
+    - target: {fileID: 6201835861199209548, guid: dbe8399243461fe4b9ee61c4876db4c2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbe8399243461fe4b9ee61c4876db4c2, type: 3}
---- !u!1 &7993040669141335822 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6201835861199209548, guid: dbe8399243461fe4b9ee61c4876db4c2,
-    type: 3}
-  m_PrefabInstance: {fileID: 4106619823937928002}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1495260798161208631 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3187879203266821749, guid: dbe8399243461fe4b9ee61c4876db4c2,

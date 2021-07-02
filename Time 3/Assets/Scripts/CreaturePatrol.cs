@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 public class CreaturePatrol : MonoBehaviour
 {
+    public float respawnDistance = 50f;
     public enum AlertnessLevel
     {
         distracted, suspicious, running
@@ -49,16 +50,19 @@ public class CreaturePatrol : MonoBehaviour
     public Animator anim;
     private FOVDetection _fov;
     private Transform _playerTransform;
+    private Coroutine _respawnCoroutine = null;
+    private GameObject _creatureModel;
 
     private void Start()
     {
         _navMeshAgent = this.GetComponent<NavMeshAgent>();
         _fov = GetComponent<FOVDetection>();
         _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-
+        _creatureModel = transform.GetChild(0).gameObject;
         Assert.IsNotNull(_navMeshAgent, "creature missing navMeshAgent");
         Assert.IsNotNull(_navMeshAgent, "creature missing FOVDetection");
         Assert.IsNotNull(_playerTransform, "couldn't find Player");
+        Assert.IsNotNull(_creatureModel, "couldn't Creature Model. Should be child of Creature");
 
         Assert.IsNotNull(_patrolPoints, "patrol points no set");
         Assert.IsNotNull(anim, "Animator not set!");
@@ -112,6 +116,7 @@ public class CreaturePatrol : MonoBehaviour
 
     private void RegularPatrol()
     {
+        anim.SetBool("Walk", true);
         if (_travelling && _navMeshAgent.remainingDistance <= 1f)
         {
             _travelling = false;
@@ -148,10 +153,10 @@ public class CreaturePatrol : MonoBehaviour
 
     private void Flee()
     {
+
         _waiting = false;
         anim.SetBool("Walk", true);
         // float distance = Vector3.Distance(transform.position, _playerTransform.position);
-
 
         // Vector3 dirToPlayer = transform.position - _playerTransform.position;
 
@@ -159,7 +164,25 @@ public class CreaturePatrol : MonoBehaviour
         // newPos.y = transform.position.y;
         _navMeshAgent.SetDestination(hideout.position);
 
+        float dist=_navMeshAgent.remainingDistance;
+        if (_respawnCoroutine == null && dist!=Mathf.Infinity && _navMeshAgent.pathStatus==NavMeshPathStatus.PathComplete && _navMeshAgent.remainingDistance<=5f){
+            _respawnCoroutine = StartCoroutine(waitRespawn());
+        }
+
     }
+    private IEnumerator waitRespawn()
+    {
+        _creatureModel.SetActive(false);
+        yield return new WaitUntil(()=>{return Vector3.Distance(_playerTransform.position, transform.position) >= respawnDistance;});
+        alertness = AlertnessLevel.distracted;
+        _seenTimer = 0f;
+        _heardTimer = 0f;
+        _creatureModel.SetActive(true);
+        _respawnCoroutine = null;
+        _travelling = true;
+    }
+
+
 
     private void SetDestination()
     {

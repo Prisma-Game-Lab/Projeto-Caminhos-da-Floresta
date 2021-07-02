@@ -61,6 +61,7 @@ public class SoundRadius : MonoBehaviour
         }
         foreach (var creature in creatureScripts)
         {
+            if(creature == null) continue;
             var creatureTransform = creature.transform;
             var distance = Vector3.Distance(creatureTransform.position,transform.position);
             if(distance <= radius){
