@@ -48,37 +48,28 @@ public class FOVDetection : MonoBehaviour
 
     public bool InFOV (Transform target, float maxAngle, float maxRadius)
     {
-        Collider[] overlaps = new Collider[10];
-        int count = Physics.OverlapSphereNonAlloc(transform.position, maxRadius, overlaps);
-        Assert.IsFalse(count >= 10, "Over 10 collisions");
-        for (int i = 0; i < count + 1; i++)
+
+
+
+        Vector3 directionbetween = (target.position - transform.position).normalized;
+        directionbetween.y *= 0; //Zerando o Y do vetor da posi��o entre o inimigo e o objeto a ser checado para ignorar o fator de altura
+
+        float angle = Vector3.Angle(transform.forward, directionbetween);
+        if(angle <= maxAngle)
         {
-            if(overlaps[i] != null)
+            Ray ray = new Ray(transform.position, target.position - transform.position);
+            RaycastHit hit;
+
+            if(Physics.Raycast(ray, out hit, maxRadius))
             {
-                if(overlaps[i].transform == target)
+                if(hit.transform == target)
                 {
-                    Vector3 directionbetween = (target.position - transform.position).normalized;
-                    directionbetween.y *= 0; //Zerando o Y do vetor da posi��o entre o inimigo e o objeto a ser checado para ignorar o fator de altura
-
-                    float angle = Vector3.Angle(transform.forward, directionbetween);
-
-                    if(angle <= maxAngle)
-                    {
-                        Ray ray = new Ray(transform.position, target.position - transform.position);
-                        RaycastHit hit;
-
-                        if(Physics.Raycast(ray, out hit, maxRadius))
-                        {
-                            if(hit.transform == target)
-                            {
-                                /* o jogador est� dentro do campo de vis�o */
-                                return true;
-                            }
-                        }
-                    }
+                    /* o jogador est� dentro do campo de vis�o */
+                    return true;
                 }
             }
         }
+
         return false;
     }
 

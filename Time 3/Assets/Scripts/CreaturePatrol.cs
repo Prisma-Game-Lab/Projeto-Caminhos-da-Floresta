@@ -34,6 +34,8 @@ public class CreaturePatrol : MonoBehaviour
 
     public float walkingSpeed = 3f;
     public float runningSpeed = 5f;
+    //place to flee to
+    public Transform hideout;
     //Private variables for base behaviour
     public AlertnessLevel alertness = AlertnessLevel.distracted;
     private NavMeshAgent _navMeshAgent;
@@ -59,6 +61,8 @@ public class CreaturePatrol : MonoBehaviour
         Assert.IsNotNull(_playerTransform, "couldn't find Player");
 
         Assert.IsNotNull(_patrolPoints, "patrol points no set");
+        Assert.IsNotNull(anim, "Animator not set!");
+        Assert.IsNotNull(hideout, "Hideout location not set!");
         Assert.IsTrue(_patrolPoints.Count >= 2, "creature needs at least 2 patrol points");
         Assert.IsTrue(_patrolPoints.Count == _totalWaitTimes.Count, "waitTimes and patrolPoints dont match!");
 
@@ -91,6 +95,7 @@ public class CreaturePatrol : MonoBehaviour
         if(_seenTimer > maxSeenTime){
             alertness = AlertnessLevel.running;
             _seenTimer = 0f;
+            _heardTimer = 0f;
         }
 
         switch(alertness){
@@ -145,14 +150,14 @@ public class CreaturePatrol : MonoBehaviour
     {
         _waiting = false;
         anim.SetBool("Walk", true);
-        float distance = Vector3.Distance(transform.position, _playerTransform.position);
+        // float distance = Vector3.Distance(transform.position, _playerTransform.position);
 
 
-        Vector3 dirToPlayer = transform.position - _playerTransform.position;
+        // Vector3 dirToPlayer = transform.position - _playerTransform.position;
 
-        Vector3 newPos = transform.position + (dirToPlayer.normalized * -1000f);
-
-        _navMeshAgent.SetDestination(newPos);
+        // Vector3 newPos = transform.position + (dirToPlayer.normalized);
+        // newPos.y = transform.position.y;
+        _navMeshAgent.SetDestination(hideout.position);
 
     }
 
@@ -189,6 +194,5 @@ public class CreaturePatrol : MonoBehaviour
                 _currrentPatrolIndex = _patrolPoints.Count - 1;
             }
         }
-        Debug.Log($"Changing patrol point to {_currrentPatrolIndex}");
     }
 }

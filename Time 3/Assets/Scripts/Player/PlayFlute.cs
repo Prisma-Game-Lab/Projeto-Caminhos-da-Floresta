@@ -6,9 +6,13 @@ using UnityEngine.Assertions;
 public class PlayFlute : MonoBehaviour
 {
     public float radius;
+    private InputManager inputManager;
+    private void Awake() {
+        inputManager = GetComponent<InputManager>();
+    }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (inputManager.playFlute_input)
         {
             Collider[] overlaps = new Collider[10];
             int count = Physics.OverlapSphereNonAlloc(transform.position, radius, overlaps, 7);
