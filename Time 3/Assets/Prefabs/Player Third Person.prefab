@@ -65,6 +65,7 @@ MonoBehaviour:
   isGrounded: 0
   isJumping: 0
   isInteracting: 0
+  isplayingFlute: 0
   movementSpeed: 7
   steathSpeed: 5
   rotationSpeed: 15
@@ -111,6 +112,7 @@ MonoBehaviour:
   stealth_Input: 0
   jump_Input: 0
   interact_Input: 0
+  playFlute_input: 0
 --- !u!114 &1137136773284394130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,33 +126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxRadius: 15
---- !u!114 &3472252606256669090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6313822968854547675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86669486e60bd8c43b3f0c05af9dd5e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 7322880618745555831}
-  cam: {fileID: 0}
-  anim: {fileID: 0}
-  speed: 20
-  stealthSpeed: 10
-  turnSmoopthTime: 0.2
-  gravity: -22
-  jumpForce: 2.5
-  groundDistance: 0.4
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 8
-  groundCheck: {fileID: 7322880619141983056}
-  isGrounded: 0
-  isMoving: 0
 --- !u!114 &2193301771164549197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +141,19 @@ MonoBehaviour:
   triggerText: {fileID: 0}
   gameOverUI: {fileID: 0}
   objectList: []
+--- !u!114 &3472252606256669090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6313822968854547675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86669486e60bd8c43b3f0c05af9dd5e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepsCooldownTime: 0
 --- !u!114 &8060860319685196154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,10 +166,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26ce2cbe97f0a544a44dba1fdfda265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerText: {fileID: 0}
-  objectList: []
-  energy: 1
   anim: {fileID: 0}
+--- !u!114 &8624311109455268200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6313822968854547675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b624efb36e22a43ba51c2dcf878b60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 15
 --- !u!1 &7322880618745555825
 GameObject:
   m_ObjectHideFlags: 0

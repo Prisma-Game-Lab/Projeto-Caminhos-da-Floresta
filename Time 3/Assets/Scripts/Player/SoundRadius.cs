@@ -5,10 +5,10 @@ using UnityEngine.Assertions;
 
 public class SoundRadius : MonoBehaviour
 {
-    public float maxRadius;
     private Animator animator;
     private List<CreaturePatrol> creatureScripts;
     private PlayerLocomotion locScript;
+    private TerrainDetector terrainDetector;
 
     private void Start() {
         creatureScripts = new List<CreaturePatrol>();
@@ -22,71 +22,49 @@ public class SoundRadius : MonoBehaviour
         }
         locScript = GetComponent<PlayerLocomotion>();
         Assert.IsNotNull(locScript, "Player sem script 'Player Locomotion'");
+
+        terrainDetector = new TerrainDetector();
     }
     public void Step(){
-        float radius = maxRadius;
-        float value = 5.0f;
-        if(locScript.isSteath){
-            radius = 0f;
-            value = 0f;
-        }
+        float radius = 0.0f;
+        float value = 0.0f;
+        int terrainTextureIndex = terrainDetector.GetActiveTerrainTextureIdx(transform.position);
+        bool isStealth = locScript.isSteath;
+        switch (terrainTextureIndex)
+        {
+            // grama
+            case 0:
+                radius = isStealth? 5f : 10f;
+                value = isStealth? 5f : 10f;
+            break;
 
+            // pedra
+            case 1:
+
+            // agua
+            case 2:
+
+            // cascalho
+            case 3:
+
+            // tronco
+            case 4:
+
+            // terra
+            case 5:
+
+            // folhas
+            case 6:
+
+            default:
+            break;
+        }
         foreach (var creature in creatureScripts)
         {
             var creatureTransform = creature.transform;
             var distance = Vector3.Distance(creatureTransform.position,transform.position);
             if(distance <= radius){
                 creature.Alert(value);
-            }
-        }
-    }
-    private void Update()
-    {
-        InRadius(maxRadius);
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, maxRadius);
-    }
-
-    public void InRadius(float maxRadius)
-    {
-        Collider[] overlaps = new Collider[10];
-        int count = Physics.OverlapSphereNonAlloc(transform.position, maxRadius, overlaps, 7);
-        Assert.IsTrue(count <= 9, $"{count} colisions");
-        for (int i = 0; i < count + 1; i++)
-        {
-            if (overlaps[i] != null)
-            {
-                if (overlaps[i].transform.gameObject.CompareTag("Creature"))
-                {
-                    Vector3 directionbetween = (overlaps[i].transform.position - transform.position).normalized;
-                    directionbetween.y *= 0; //Zerando o Y do vetor da posicao entre o inimigo e o objeto a ser checado para ignorar o fator de altura
-
-                    Ray ray = new Ray(transform.position, overlaps[i].transform.position - transform.position);
-                    RaycastHit hit;
-
-                    if (Physics.Raycast(ray, out hit, maxRadius))
-                    {
-                        if (hit.transform.gameObject.tag == "Creature")
-                        {
-                            /* A cria est� dentro do raio */
-
-                            //Debug.Log("A craitura est� dentro do raio");
-                            if (Input.GetMouseButtonDown(0))
-                            {
-                                transform.gameObject.GetComponent<ObjectCollider>().objectList.Add("Offering");
-
-                                //recado do amiguinho do som: nao usar SetActive(false), dificulta a minha vida. Obrigado!
-                                //hit.transform.gameObject.SetActive(false);
-
-                                hit.transform.gameObject.GetComponentInChildren<PedraSounds>().PlaySusto();
-                            }
-                        }
-                    }
-                }
             }
         }
     }

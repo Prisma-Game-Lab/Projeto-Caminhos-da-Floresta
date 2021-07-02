@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class FootSteps : MonoBehaviour
 {
@@ -9,28 +10,34 @@ public class FootSteps : MonoBehaviour
     private bool canPlayFootSteps = true;
 
     public float footStepsCooldownTime;
-
+    private PlayerLocomotion locomotion;
 
     private void Awake()
     {
         //playerController = gameObject.GetComponent<ThirdPersonController>();
         terrainDetector = new TerrainDetector();
         footSteps = FMODUnity.RuntimeManager.CreateInstance("event:/footSteps");
-
+        locomotion = GetComponent<PlayerLocomotion>();
+        Assert.IsNotNull(locomotion);
         //footSteps.start();
+
     }
 
     private void Step(int mode) //chamada pelo animator
     {
-        int terrainTextureIndex = terrainDetector.GetActiveTerrainTextureIdx(transform.position);
-        int parameterValue = textureIndexToParameterValue(terrainTextureIndex);
-        
-        if (canPlayFootSteps){
-            footSteps.setParameterByName("terrain", parameterValue);
-            footSteps.setParameterByName("mode", mode);
-            footSteps.start();
+        if (locomotion.isGrounded)
+        {
+            int terrainTextureIndex = terrainDetector.GetActiveTerrainTextureIdx(transform.position);
+            int parameterValue = textureIndexToParameterValue(terrainTextureIndex);
+
+            if (canPlayFootSteps)
+            {
+                footSteps.setParameterByName("terrain", parameterValue);
+                footSteps.setParameterByName("mode", mode);
+                footSteps.start();
+            }
+            StartCoroutine(FootStepsCooldown());
         }
-        StartCoroutine(FootStepsCooldown());
     }
 
     private IEnumerator FootStepsCooldown()
@@ -53,7 +60,8 @@ public class FootSteps : MonoBehaviour
         6 - agua
         */
 
-        switch (terrainTextureIndex){
+        switch (terrainTextureIndex)
+        {
             case 0:
                 return 0;
             case 1:
@@ -73,24 +81,24 @@ public class FootSteps : MonoBehaviour
         }
     }
 
-   /* private void Update() {
-        int terrainTextureIndex = terrainDetector.GetActiveTerrainTextureIdx(transform.position);
-        footSteps.setParameterByName("terrain", terrainTextureIndex);
+    /* private void Update() {
+         int terrainTextureIndex = terrainDetector.GetActiveTerrainTextureIdx(transform.position);
+         footSteps.setParameterByName("terrain", terrainTextureIndex);
 
-        FMOD.Studio.PLAYBACK_STATE state;
-        footSteps.getPlaybackState(out state);
+         FMOD.Studio.PLAYBACK_STATE state;
+         footSteps.getPlaybackState(out state);
 
-        if (playerController.isMoving && playerController.isGrounded)
-        {
-            if (state == FMOD.Studio.PLAYBACK_STATE.STOPPED)
-                footSteps.start();
-        }
-        else
-        {
-            if (state == FMOD.Studio.PLAYBACK_STATE.PLAYING)
-                footSteps.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        }
+         if (playerController.isMoving && playerController.isGrounded)
+         {
+             if (state == FMOD.Studio.PLAYBACK_STATE.STOPPED)
+                 footSteps.start();
+         }
+         else
+         {
+             if (state == FMOD.Studio.PLAYBACK_STATE.PLAYING)
+                 footSteps.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+         }
 
-        //Debug.Log(terrainTextureIndex);
-    }*/
+         //Debug.Log(terrainTextureIndex);
+     }*/
 }
