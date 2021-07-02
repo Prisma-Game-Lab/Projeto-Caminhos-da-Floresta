@@ -5,10 +5,10 @@ using UnityEngine.Assertions;
 
 public class SoundRadius : MonoBehaviour
 {
-    public float maxRadius;
     private Animator animator;
     private List<CreaturePatrol> creatureScripts;
     private PlayerLocomotion locScript;
+    private TerrainDetector terrainDetector;
 
     private void Start() {
         creatureScripts = new List<CreaturePatrol>();
@@ -22,15 +22,43 @@ public class SoundRadius : MonoBehaviour
         }
         locScript = GetComponent<PlayerLocomotion>();
         Assert.IsNotNull(locScript, "Player sem script 'Player Locomotion'");
+
+        terrainDetector = new TerrainDetector();
     }
     public void Step(){
-        float radius = maxRadius;
-        float value = 5.0f;
-        if(locScript.isSteath){
-            radius = 0f;
-            value = 0f;
-        }
+        float radius = 0.0f;
+        float value = 0.0f;
+        int terrainTextureIndex = terrainDetector.GetActiveTerrainTextureIdx(transform.position);
+        bool isStealth = locScript.isSteath;
+        switch (terrainTextureIndex)
+        {
+            // grama
+            case 0:
+                radius = isStealth? 5f : 10f;
+                value = isStealth? 5f : 10f;
+            break;
 
+            // pedra
+            case 1:
+
+            // agua
+            case 2:
+
+            // cascalho
+            case 3:
+
+            // tronco
+            case 4:
+
+            // terra
+            case 5:
+
+            // folhas
+            case 6:
+
+            default:
+            break;
+        }
         foreach (var creature in creatureScripts)
         {
             var creatureTransform = creature.transform;
@@ -39,11 +67,5 @@ public class SoundRadius : MonoBehaviour
                 creature.Alert(value);
             }
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, maxRadius);
     }
 }
