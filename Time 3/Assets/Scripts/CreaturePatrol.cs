@@ -88,15 +88,18 @@ public class CreaturePatrol : MonoBehaviour
 
         if(_heardTimer > maxHearTime){
             if(alertness == AlertnessLevel.distracted){
+                Debug.Log("Heard something!");
                 alertness = AlertnessLevel.suspicious;
             }
             else{
+                Debug.Log("Heard it again! Im running!");
                 alertness = AlertnessLevel.running;
             }
             _heardTimer = 0f;
         }
 
         if(_seenTimer > maxSeenTime){
+            Debug.Log("Player spotted! Im running");
             alertness = AlertnessLevel.running;
             _seenTimer = 0f;
             _heardTimer = 0f;
@@ -165,15 +168,17 @@ public class CreaturePatrol : MonoBehaviour
         _navMeshAgent.SetDestination(hideout.position);
 
         float dist=_navMeshAgent.remainingDistance;
-        if (_respawnCoroutine == null && dist!=Mathf.Infinity && _navMeshAgent.pathStatus==NavMeshPathStatus.PathComplete && _navMeshAgent.remainingDistance<=5f){
+        if (Vector3.Distance(transform.position, hideout.position) < 5.0f){
             _respawnCoroutine = StartCoroutine(waitRespawn());
         }
 
     }
     private IEnumerator waitRespawn()
     {
+        Debug.Log("In my hideout, waiting player to leave");
         _creatureModel.SetActive(false);
         yield return new WaitUntil(()=>{return Vector3.Distance(_playerTransform.position, transform.position) >= respawnDistance;});
+        Debug.Log("Player left. Resuming patrol");
         alertness = AlertnessLevel.distracted;
         _seenTimer = 0f;
         _heardTimer = 0f;
