@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.18855621, g: 0.18427378, b: 0.38679248, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 03b6637fd92f3dc4faee14d7ada366ac, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: cb20c710b0721ef4d88cabbec2aa4da7, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.19045126, g: 0.261098, b: 0.28278792, a: 1}
+  m_IndirectSpecularColor: {r: 0.40014517, g: 0.48293656, b: 0.47090012, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 188890349}
   - component: {fileID: 188890348}
   m_Layer: 3
-  m_Name: Terrain_(-500.0, 0.0, 500.0)
+  m_Name: SW
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -257,7 +257,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1250270739}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!154 &188890348
 TerrainCollider:
@@ -315,7 +315,7 @@ GameObject:
   - component: {fileID: 277775359}
   - component: {fileID: 277775358}
   m_Layer: 3
-  m_Name: Terrain_(0.0, 0.0, 500.0)
+  m_Name: W
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 668940325}
   - component: {fileID: 668940324}
   m_Layer: 3
-  m_Name: Terrain
+  m_Name: Meio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -409,7 +409,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1250270739}
-  m_RootOrder: 8
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!154 &668940324
 TerrainCollider:
@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 954220564}
   - component: {fileID: 954220563}
   m_Layer: 3
-  m_Name: Terrain_(500.0, 0.0, 500.0)
+  m_Name: NW
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -485,7 +485,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1250270739}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!154 &954220563
 TerrainCollider:
@@ -543,7 +543,7 @@ GameObject:
   - component: {fileID: 1116261651}
   - component: {fileID: 1116261650}
   m_Layer: 3
-  m_Name: Terrain_(-500.0, 0.0, -500.0)
+  m_Name: SE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -561,7 +561,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1250270739}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!154 &1116261650
 TerrainCollider:
@@ -638,11 +638,11 @@ Transform:
   - {fileID: 2075603602}
   - {fileID: 277775357}
   - {fileID: 1950447164}
+  - {fileID: 668940323}
   - {fileID: 1116261649}
   - {fileID: 954220562}
   - {fileID: 188890347}
   - {fileID: 1922874362}
-  - {fileID: 668940323}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -701,7 +701,7 @@ GameObject:
   - component: {fileID: 1519128538}
   - component: {fileID: 1519128537}
   m_Layer: 3
-  m_Name: Terrain_(0.0, 0.0, -500.0)
+  m_Name: E
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -837,7 +837,7 @@ GameObject:
   - component: {fileID: 1922874364}
   - component: {fileID: 1922874363}
   m_Layer: 3
-  m_Name: Terrain_(500.0, 0.0, -500.0)
+  m_Name: NE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -855,7 +855,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1250270739}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!154 &1922874363
 TerrainCollider:
@@ -1006,7 +1006,7 @@ GameObject:
   - component: {fileID: 1950447166}
   - component: {fileID: 1950447165}
   m_Layer: 3
-  m_Name: Terrain_(500.0, 0.0, 0.0)
+  m_Name: N
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1082,7 +1082,7 @@ GameObject:
   - component: {fileID: 2075603604}
   - component: {fileID: 2075603603}
   m_Layer: 3
-  m_Name: Terrain_(-500.0, 0.0, 0.0)
+  m_Name: S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
