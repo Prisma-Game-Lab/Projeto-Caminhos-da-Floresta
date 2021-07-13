@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.19045189, g: 0.2610991, b: 0.2827886, a: 1}
+  m_IndirectSpecularColor: {r: 0.19045138, g: 0.2610982, b: 0.28278822, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7128,7 +7128,7 @@ PrefabInstance:
     - target: {fileID: 7929781842998536416, guid: 7c98fded05b5451408af0f4cd57eaa63,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.05
+      value: 12.52
       objectReference: {fileID: 0}
     - target: {fileID: 7929781842998536416, guid: 7c98fded05b5451408af0f4cd57eaa63,
         type: 3}
@@ -7178,7 +7178,7 @@ PrefabInstance:
     - target: {fileID: 7929781842998536420, guid: 7c98fded05b5451408af0f4cd57eaa63,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c98fded05b5451408af0f4cd57eaa63, type: 3}
@@ -11003,56 +11003,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 490297670}
     m_Modifications:
-    - target: {fileID: 3734249403709453270, guid: 7c98fded05b5451408af0f4cd57eaa63,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.72
-      objectReference: {fileID: 0}
-    - target: {fileID: 3734249403709453270, guid: 7c98fded05b5451408af0f4cd57eaa63,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -4.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 3734249403709453270, guid: 7c98fded05b5451408af0f4cd57eaa63,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3734249403709453270, guid: 7c98fded05b5451408af0f4cd57eaa63,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.39722538
-      objectReference: {fileID: 0}
-    - target: {fileID: 3734249403709453270, guid: 7c98fded05b5451408af0f4cd57eaa63,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.39255565
-      objectReference: {fileID: 0}
-    - target: {fileID: 3734249403709453270, guid: 7c98fded05b5451408af0f4cd57eaa63,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.5900208
-      objectReference: {fileID: 0}
-    - target: {fileID: 3734249403709453270, guid: 7c98fded05b5451408af0f4cd57eaa63,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.5830846
-      objectReference: {fileID: 0}
-    - target: {fileID: 3734249403709453270, guid: 7c98fded05b5451408af0f4cd57eaa63,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -89.323
-      objectReference: {fileID: 0}
-    - target: {fileID: 3734249403709453270, guid: 7c98fded05b5451408af0f4cd57eaa63,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -112.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3734249403709453270, guid: 7c98fded05b5451408af0f4cd57eaa63,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7929781842998536416, guid: 7c98fded05b5451408af0f4cd57eaa63,
         type: 3}
       propertyPath: m_RootOrder
@@ -11066,7 +11016,7 @@ PrefabInstance:
     - target: {fileID: 7929781842998536416, guid: 7c98fded05b5451408af0f4cd57eaa63,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 104.47
+      value: 99.68
       objectReference: {fileID: 0}
     - target: {fileID: 7929781842998536416, guid: 7c98fded05b5451408af0f4cd57eaa63,
         type: 3}
@@ -11112,11 +11062,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NewPedestal (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7929781842998536420, guid: 7c98fded05b5451408af0f4cd57eaa63,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c98fded05b5451408af0f4cd57eaa63, type: 3}
