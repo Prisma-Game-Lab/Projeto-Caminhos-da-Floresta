@@ -707,7 +707,7 @@ PrefabInstance:
     - target: {fileID: 7512693294430984601, guid: 1c4d84b5af69e814290eb1d5b4e3da0b,
         type: 3}
       propertyPath: m_Name
-      value: Cristal 1
+      value: Cristal Enorme Central
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c4d84b5af69e814290eb1d5b4e3da0b, type: 3}
