@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6712395739706965084}
   - component: {fileID: 6712395739706965087}
   - component: {fileID: 6712395739706965086}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Vaga-Lumes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4816,7 +4816,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6712395739788153898}
   - component: {fileID: 6712395739788153899}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Area Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4909,7 +4909,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6712395740948240859}
   - component: {fileID: 6712395740948240858}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
