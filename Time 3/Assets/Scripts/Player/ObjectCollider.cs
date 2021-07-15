@@ -18,9 +18,11 @@ public class ObjectCollider : MonoBehaviour
 
     FMOD.Studio.EventInstance pickItem;
     FMOD.Studio.EventInstance lightOrb;
+    public GameObject vfx;
 
     void Awake()
     {
+        vfx.SetActive(false);
         /* Recuperando os itens quando se troca de cena */
         int quantItens = PlayerPrefs.GetInt("Quant_Itens");
         for (int i = 0; i < quantItens; i++)
@@ -56,6 +58,7 @@ public class ObjectCollider : MonoBehaviour
         {
             Interact();
         }
+        vfx.SetActive(objectList.Count > 0);
     }
 
     void OnTriggerEnter(Collider other)
