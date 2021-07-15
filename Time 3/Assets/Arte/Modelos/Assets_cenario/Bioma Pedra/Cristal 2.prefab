@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1531795514355904316}
   - component: {fileID: 3649869179884444662}
   - component: {fileID: 8718265435681081438}
+  - component: {fileID: 3694658188605696313}
   m_Layer: 0
   m_Name: Cristal 2
   m_TagString: Untagged
@@ -144,3 +145,17 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!64 &3694658188605696313
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3001100350670715427}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7387706064836869012, guid: de17637638dd0b44e848b37b2fba590a, type: 3}
