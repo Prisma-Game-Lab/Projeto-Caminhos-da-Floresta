@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 22ca4825ab9f1744e964e9aa0a001846
+  - enabled: 1
+    path: "Assets/Scenes/\xC1rvores Gigantes.unity"
+    guid: 373a523e1e41d7443b9f790086443d08
   m_configObjects: {}
