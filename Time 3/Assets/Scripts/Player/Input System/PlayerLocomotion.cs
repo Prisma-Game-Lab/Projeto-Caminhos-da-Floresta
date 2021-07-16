@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class PlayerLocomotion : MonoBehaviour
 {
     PlayerManager playerManager;
-    AnimatorManager animManager;
+    Animator anim;
     InputManager inputManager;
     Vector3 moveDirection;
     Transform cameraObj;
@@ -39,8 +40,9 @@ public class PlayerLocomotion : MonoBehaviour
 
     private void Awake()
     {
+        anim = GetComponent<Animator>();
+        Assert.IsNotNull(anim);
         playerManager = GetComponent<PlayerManager>();
-        animManager = GetComponent<AnimatorManager>();
         inputManager = GetComponent<InputManager>();
         playerRigidbody = GetComponent<Rigidbody>();
         cameraObj = Camera.main.transform;
@@ -68,6 +70,9 @@ public class PlayerLocomotion : MonoBehaviour
         moveDirection = moveDirection + cameraObj.right * inputManager.horizontalInput;
         moveDirection.Normalize();
         moveDirection.y = 0;
+
+        anim.SetBool("Walking",moveDirection.sqrMagnitude > 0);
+        anim.SetBool("Stealth",isSteath);
 
         if(isSteath == true)
         {
@@ -112,11 +117,6 @@ public class PlayerLocomotion : MonoBehaviour
         Vector3 rayCastOrigin = transform.position;
         rayCastOrigin.y = rayCastOrigin.y + raycastHeighOffSet;
 
-        if(isGrounded == false && isJumping == false)
-        {
-
-            animManager.PlayeTargetAnimation("Falling", true);
-        }
 
         inAirTimer = inAirTimer + Time.deltaTime;
         playerRigidbody.AddForce(transform.forward * leapingVelocity);
@@ -126,11 +126,6 @@ public class PlayerLocomotion : MonoBehaviour
         //if (Physics.SphereCast(rayCastOrigin, 0.2f, -Vector3.up, out RaycastHit hit, groundLayer))
         if(Physics.Raycast(rayCastOrigin, -Vector3.up, 1.2f, groundLayer))
         {
-            if(!isGrounded)
-            {
-                animManager.PlayeTargetAnimation("Land", true);
-            }
-
             inAirTimer = 0;
             isGrounded = true;
         }
@@ -144,9 +139,7 @@ public class PlayerLocomotion : MonoBehaviour
     {
         if (isGrounded && !isInteracting)
         {
-            animManager.anim.SetBool("isJumping", true);
-            animManager.PlayeTargetAnimation("Jump", false);
-
+            anim.SetTrigger("jump");
             float jumpingVelocity = Mathf.Sqrt(-2 * gravityIntensity * jumpHeigh);
             Vector3 playerVelovity = moveDirection;
             playerVelovity.y = jumpingVelocity;
@@ -157,24 +150,18 @@ public class PlayerLocomotion : MonoBehaviour
     public void HandleInteracting()
     {
         isInteracting = true;
-        animManager.anim.SetBool("isInteracting", true);
-        animManager.PlayeTargetAnimation("GetItem", false);
+        anim.SetTrigger("pickup");
     }
 
     public void HandleDelivering()
     {
         isInteracting = true;
-        animManager.anim.SetBool("isInteracting", true);
-        animManager.PlayeTargetAnimation("Deliver_Item", false);
+        anim.SetTrigger("deliver");
     }
 
     public void HandleFlute()
     {
         isplayingFlute = true;
-        animManager.anim.SetBool("isplayingFlute", true);
-        if(inputManager.verticalInput == 0 && inputManager.horizontalInput == 0)
-            animManager.PlayeTargetAnimation("IdleFlute", false);
-        else
-            animManager.PlayeTargetAnimation("WalkingFlute", false);
+        anim.SetTrigger("playMelody");
     }
 }

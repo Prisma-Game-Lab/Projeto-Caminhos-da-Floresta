@@ -95,7 +95,6 @@ public class ObjectCollider : MonoBehaviour
             _Other.SetActive(false);
             count++;
             _isTrigger = false;
-            StartCoroutine(DisableText());
         }
         else
         {
@@ -109,14 +108,7 @@ public class ObjectCollider : MonoBehaviour
                 _Other.GetComponent<FXController>().Move();
 
                 _isTrigger = false;
-                //triggerText.gameObject.SetActive(true);
-                StartCoroutine(DisableText());
             }
         }
-    }
-
-    private IEnumerator DisableText()
-    {
-        yield return new WaitForSeconds(3f);
     }
 }
