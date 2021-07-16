@@ -10,27 +10,12 @@ PrefabInstance:
     - target: {fileID: 340876964410045661, guid: 242140c0d4fc53c45a84c76bb97f0f7f,
         type: 3}
       propertyPath: m_Name
-      value: cogumelo azul p
+      value: cogumelo azul pp 2
       objectReference: {fileID: 0}
     - target: {fileID: 1148656944026119783, guid: 242140c0d4fc53c45a84c76bb97f0f7f,
         type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1148656944026119783, guid: 242140c0d4fc53c45a84c76bb97f0f7f,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 28.862
-      objectReference: {fileID: 0}
-    - target: {fileID: 1148656944026119783, guid: 242140c0d4fc53c45a84c76bb97f0f7f,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 28.862
-      objectReference: {fileID: 0}
-    - target: {fileID: 1148656944026119783, guid: 242140c0d4fc53c45a84c76bb97f0f7f,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 28.862
       objectReference: {fileID: 0}
     - target: {fileID: 1148656944026119783, guid: 242140c0d4fc53c45a84c76bb97f0f7f,
         type: 3}
