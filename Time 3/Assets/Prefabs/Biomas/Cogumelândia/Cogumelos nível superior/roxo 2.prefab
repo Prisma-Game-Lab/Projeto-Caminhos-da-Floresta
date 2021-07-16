@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &922800897137931220
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8538535188285109345, guid: fe4799b7c4fd47049816631828bc8b33,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538535188285109345, guid: fe4799b7c4fd47049816631828bc8b33,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 279.6318
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538535188285109345, guid: fe4799b7c4fd47049816631828bc8b33,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 279.6318
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538535188285109345, guid: fe4799b7c4fd47049816631828bc8b33,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 241.74728
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538535188285109345, guid: fe4799b7c4fd47049816631828bc8b33,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 191.05931
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538535188285109345, guid: fe4799b7c4fd47049816631828bc8b33,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 149.99084
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538535188285109345, guid: fe4799b7c4fd47049816631828bc8b33,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -149.22604
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538535188285109345, guid: fe4799b7c4fd47049816631828bc8b33,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538535188285109345, guid: fe4799b7c4fd47049816631828bc8b33,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538535188285109345, guid: fe4799b7c4fd47049816631828bc8b33,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.000000030908623
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538535188285109345, guid: fe4799b7c4fd47049816631828bc8b33,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.000000030908623
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538535188285109345, guid: fe4799b7c4fd47049816631828bc8b33,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538535188285109345, guid: fe4799b7c4fd47049816631828bc8b33,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538535188285109345, guid: fe4799b7c4fd47049816631828bc8b33,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9022161611461783259, guid: fe4799b7c4fd47049816631828bc8b33,
+        type: 3}
+      propertyPath: m_Name
+      value: cogumelo roxo p
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe4799b7c4fd47049816631828bc8b33, type: 3}
