@@ -10,7 +10,9 @@ public class VideoPlayerManager : MonoBehaviour
     public VideoPlayer videoPlayer;
     private void Awake()
     {
-        videoPlayer.time = 0;
+        videoPlayer.Play();
+        videoPlayer.Pause();
+        videoPlayer.frame = 1;
     }
 
     public void QueueSceneChange(string sceneName)
