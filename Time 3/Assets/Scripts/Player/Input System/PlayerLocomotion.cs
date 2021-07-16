@@ -50,6 +50,8 @@ public class PlayerLocomotion : MonoBehaviour
 
     public void HandleAllMovement()
     {
+        anim.SetBool("Walking",Mathf.Abs(playerRigidbody.velocity.x) + Mathf.Abs(playerRigidbody.velocity.z) > 0.2);
+        anim.SetBool("Stealth",isSteath);
         HandleFallingAndLanding();
 
         if (isInteracting)
@@ -61,7 +63,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     private void HandleMovement()
     {
-        if (isJumping)
+        if (!isGrounded)
             return;
         if (isInteracting)
             return;
@@ -71,20 +73,29 @@ public class PlayerLocomotion : MonoBehaviour
         moveDirection.Normalize();
         moveDirection.y = 0;
 
-        anim.SetBool("Walking",moveDirection.sqrMagnitude > 0);
-        anim.SetBool("Stealth",isSteath);
 
+
+        float maxSpeed;
         if(isSteath == true)
         {
             moveDirection = moveDirection * steathSpeed;
+            maxSpeed = steathSpeed;
         }
         else
         {
             moveDirection = moveDirection * movementSpeed;
+            maxSpeed = movementSpeed;
         }
 
-        Vector3 movementVelocity = moveDirection;
-        playerRigidbody.velocity = movementVelocity;
+        /// limit player speed except on the y axis
+        var xzSpeed = moveDirection;
+        xzSpeed.y = 0;
+        if(xzSpeed.magnitude > maxSpeed)
+        {
+            xzSpeed = xzSpeed.normalized * maxSpeed;
+        }
+        playerRigidbody.velocity = new Vector3(xzSpeed.x, playerRigidbody.velocity.y, xzSpeed.z);
+
     }
 
     private void HandleRotation()
@@ -117,20 +128,15 @@ public class PlayerLocomotion : MonoBehaviour
         Vector3 rayCastOrigin = transform.position;
         rayCastOrigin.y = rayCastOrigin.y + raycastHeighOffSet;
 
-
-        inAirTimer = inAirTimer + Time.deltaTime;
-        playerRigidbody.AddForce(transform.forward * leapingVelocity);
-        playerRigidbody.AddForce(-Vector3.up * fallingVelocity * inAirTimer);
-
-
         //if (Physics.SphereCast(rayCastOrigin, 0.2f, -Vector3.up, out RaycastHit hit, groundLayer))
-        if(Physics.Raycast(rayCastOrigin, -Vector3.up, 1.2f, groundLayer))
+        if(Physics.Raycast(rayCastOrigin, -Vector3.up, 1.2f, groundLayer) && playerRigidbody.velocity.y <= 0)
         {
             inAirTimer = 0;
             isGrounded = true;
         }
         else
         {
+            inAirTimer = inAirTimer + Time.deltaTime;
             isGrounded = false;
         }
     }
@@ -140,10 +146,8 @@ public class PlayerLocomotion : MonoBehaviour
         if (isGrounded && !isInteracting)
         {
             anim.SetTrigger("jump");
-            float jumpingVelocity = Mathf.Sqrt(-2 * gravityIntensity * jumpHeigh);
-            Vector3 playerVelovity = moveDirection;
-            playerVelovity.y = jumpingVelocity;
-            playerRigidbody.velocity = playerVelovity;
+            playerRigidbody.AddForce(Vector3.up * jumpHeigh);
+            isGrounded=false;
         }
     }
 
