@@ -6,7 +6,7 @@ TerrainLayer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Cascalho
+  m_Name: cascalho
   m_DiffuseTexture: {fileID: 2800000, guid: 55e05e8c1ca5996429a39a50faa136c4, type: 3}
   m_NormalMapTexture: {fileID: 2800000, guid: 703d1f74c69fc95498dcfd0afe8e1d61, type: 3}
   m_MaskMapTexture: {fileID: 0}
