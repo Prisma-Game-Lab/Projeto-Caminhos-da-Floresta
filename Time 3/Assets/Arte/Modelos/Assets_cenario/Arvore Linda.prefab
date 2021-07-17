@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5495580203926824276}
   - component: {fileID: 8929479731610725105}
   - component: {fileID: 6633544727254130235}
+  - component: {fileID: 2959522167073609691}
   m_Layer: 0
   m_Name: arvore_giga03
   m_TagString: Untagged
@@ -81,6 +82,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2959522167073609691
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5120568280964825070}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5151411073838844123, guid: 2d2224eb1aad64a4dbb8eab0c5b4e5a3, type: 3}
 --- !u!1 &5120568281539305742
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +107,7 @@ GameObject:
   - component: {fileID: 5495580204568427444}
   - component: {fileID: 8929479729903776785}
   - component: {fileID: 6633544728835506395}
+  - component: {fileID: 7241727525263214949}
   m_Layer: 0
   m_Name: arbusto_P
   m_TagString: Untagged
@@ -162,6 +178,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7241727525263214949
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5120568281539305742}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8074609055753472116, guid: 64b8ab1e558a093469e2a0c7fd456cee, type: 3}
 --- !u!1 &5462444587399121797
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,7 +215,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5462444587399121797}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.3361206, y: -8.027016, z: -16.620483}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
