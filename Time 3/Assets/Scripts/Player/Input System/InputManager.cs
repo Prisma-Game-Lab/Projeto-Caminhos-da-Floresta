@@ -6,6 +6,7 @@ public class InputManager : MonoBehaviour
 {
     PlayerControls playerControls;
     PlayerLocomotion playerLocomotion;
+    AnimatorManager animManager;
 
     public Vector2 movementInput;
     public Vector2 cameraInput;
@@ -24,6 +25,7 @@ public class InputManager : MonoBehaviour
 
     private void Awake()
     {
+        animManager = GetComponent<AnimatorManager>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
     }
     private void OnEnable()
@@ -69,6 +71,7 @@ public class InputManager : MonoBehaviour
         cameraInputX = cameraInput.x;
 
         moveAmount = Mathf.Clamp01(Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
+        animManager.UpdateAnimatorValues(0, moveAmount, playerLocomotion.isSteath);
     }
 
     private void HandleSteathInput()
