@@ -69,6 +69,8 @@ public class PlayerLocomotion : MonoBehaviour
         moveDirection.Normalize();
         moveDirection.y = 0;
 
+        playerRigidbody.AddForce(Physics.gravity * 3);
+
         if(isSteath == true)
         {
             moveDirection = moveDirection * steathSpeed;
@@ -112,15 +114,15 @@ public class PlayerLocomotion : MonoBehaviour
         Vector3 rayCastOrigin = transform.position;
         rayCastOrigin.y = rayCastOrigin.y + raycastHeighOffSet;
 
-        if(isGrounded == false && isJumping == false)
+        if(isGrounded == false && isJumping == false  && inAirTimer >= 0.7f)
         {
 
             animManager.PlayeTargetAnimation("Falling", true);
         }
 
         inAirTimer = inAirTimer + Time.deltaTime;
-        playerRigidbody.AddForce(transform.forward * leapingVelocity);
-        playerRigidbody.AddForce(-Vector3.up * fallingVelocity * inAirTimer);
+        /*playerRigidbody.AddForce(transform.forward * leapingVelocity);
+        playerRigidbody.AddForce(-Vector3.up * fallingVelocity * inAirTimer);*/
 
 
         //if (Physics.SphereCast(rayCastOrigin, 0.2f, -Vector3.up, out RaycastHit hit, groundLayer))
