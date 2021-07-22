@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 using TMPro;
 
 public class ObjectCollider : MonoBehaviour
@@ -22,6 +23,7 @@ public class ObjectCollider : MonoBehaviour
 
     void Awake()
     {
+        Assert.IsNotNull(vfx);
         vfx.SetActive(false);
         /* Recuperando os itens quando se troca de cena */
         int quantItens = PlayerPrefs.GetInt("Quant_Itens");

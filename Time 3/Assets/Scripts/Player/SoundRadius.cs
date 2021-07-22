@@ -10,7 +10,8 @@ public class SoundRadius : MonoBehaviour
     private PlayerLocomotion locScript;
     private TerrainDetector terrainDetector;
 
-    private void Start() {
+    private void Start()
+    {
         creatureScripts = new List<CreaturePatrol>();
         animator = GetComponentInChildren<Animator>();
         var allCreatures = GameObject.FindGameObjectsWithTag("Creature");
@@ -25,7 +26,8 @@ public class SoundRadius : MonoBehaviour
 
         terrainDetector = new TerrainDetector();
     }
-    public void Step(){
+    public void Step()
+    {
         float radius = 0.0f;
         float value = 0.0f;
         int terrainTextureIndex = terrainDetector.GetActiveTerrainTextureIdx(transform.position);
@@ -34,9 +36,9 @@ public class SoundRadius : MonoBehaviour
         {
             // grama
             case 0:
-                radius = isStealth? 5f : 10f;
-                value = isStealth? 5f : 10f;
-            break;
+                radius = isStealth ? 5f : 10f;
+                value = isStealth ? 5f : 10f;
+                break;
 
             // pedra
             case 1:
@@ -57,14 +59,17 @@ public class SoundRadius : MonoBehaviour
             case 6:
 
             default:
-            break;
+                radius = isStealth ? 5f : 10f;
+                value = isStealth ? 5f : 10f;
+                break;
         }
         foreach (var creature in creatureScripts)
         {
-            if(creature == null) continue;
+            if (creature == null) continue;
             var creatureTransform = creature.transform;
-            var distance = Vector3.Distance(creatureTransform.position,transform.position);
-            if(distance <= radius){
+            var distance = Vector3.Distance(creatureTransform.position, transform.position);
+            if (distance <= radius)
+            {
                 creature.Alert(value);
             }
         }
