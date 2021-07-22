@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1261758234882645602}
   - component: {fileID: 3919922935351634600}
   - component: {fileID: 5493389800643103426}
-  m_Layer: 0
-  m_Name: cogumelo_M3
+  m_Layer: 3
+  m_Name: cogumelo azul p
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

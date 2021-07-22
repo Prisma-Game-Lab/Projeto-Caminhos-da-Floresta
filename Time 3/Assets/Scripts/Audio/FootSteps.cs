@@ -12,6 +12,9 @@ public class FootSteps : MonoBehaviour
     public float footStepsCooldownTime;
     private PlayerLocomotion locomotion;
 
+    int terrainOverrideValue;
+    bool shoudlOverrideTerrain;
+
     private void Awake()
     {
         //playerController = gameObject.GetComponent<ThirdPersonController>();
@@ -25,17 +28,20 @@ public class FootSteps : MonoBehaviour
 
     private void Step(int mode) //chamada pelo animator
     {
-        if (locomotion.isGrounded)
+        if (locomotion.isGrounded && canPlayFootSteps)
         {
-            int terrainTextureIndex = terrainDetector.GetActiveTerrainTextureIdx(transform.position);
-            int parameterValue = textureIndexToParameterValue(terrainTextureIndex);
-
-            if (canPlayFootSteps)
+            if (!shoudlOverrideTerrain)
             {
+                int terrainTextureIndex = terrainDetector.GetActiveTerrainTextureIdx(transform.position);
+                int parameterValue = textureIndexToParameterValue(terrainTextureIndex);
                 footSteps.setParameterByName("terrain", parameterValue);
-                footSteps.setParameterByName("mode", mode);
-                footSteps.start();
             }
+            else
+            {
+                footSteps.setParameterByName("terrain", terrainOverrideValue);
+            }
+            footSteps.setParameterByName("mode", mode);
+            footSteps.start();
             StartCoroutine(FootStepsCooldown());
         }
     }
@@ -101,4 +107,21 @@ public class FootSteps : MonoBehaviour
 
          //Debug.Log(terrainTextureIndex);
      }*/
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Cogumelo"))
+        {
+            shoudlOverrideTerrain = true;
+            //terrainOverrideValue =
+        }
+
+    }
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.CompareTag("Cogumelo"))
+        {
+            shoudlOverrideTerrain = false;
+        }
+    }
 }
