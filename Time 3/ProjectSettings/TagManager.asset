@@ -8,6 +8,7 @@ TagManager:
   - Offering
   - Pedestal
   - Creature
+  - Cogumelo
   layers:
   - Default
   - TransparentFX
