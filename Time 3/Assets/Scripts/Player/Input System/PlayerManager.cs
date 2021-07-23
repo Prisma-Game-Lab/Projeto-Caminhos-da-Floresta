@@ -31,6 +31,7 @@ public class PlayerManager : MonoBehaviour
 
     private void LateUpdate()
     {
+        if(Time.timeScale < 1f) return;
         cameraManager.HandleAllCameraMovement();
         playerLocomotion.isInteracting = anim.GetBool("isInteracting");
         playerLocomotion.isJumping = anim.GetBool("isJumping");

@@ -6,6 +6,7 @@ using UnityEngine.Assertions;
 public class MagicFence : MonoBehaviour
 {
     public CreaturePatrol creatureScript;
+    public GameObject fence;
     private void Awake() {
         Assert.IsNotNull(creatureScript);
         StartCoroutine(ActivateSelf());
@@ -16,9 +17,9 @@ public class MagicFence : MonoBehaviour
         while(true)
         {
             yield return new WaitUntil(() => creatureScript.alertness == CreaturePatrol.AlertnessLevel.running);
-            this.gameObject.SetActive(true);
+            fence.SetActive(true);
             yield return new WaitUntil(() => creatureScript.alertness != CreaturePatrol.AlertnessLevel.running);
-            this.gameObject.SetActive(false);
+            fence.SetActive(false);
         }
     }
 
