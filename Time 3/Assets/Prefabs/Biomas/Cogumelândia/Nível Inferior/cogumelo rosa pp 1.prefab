@@ -87,5 +87,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cogumelo rosa pp 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6778234988594263088, guid: 608169be92614c94192d3e33f96cd487,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cogumelo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 608169be92614c94192d3e33f96cd487, type: 3}

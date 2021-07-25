@@ -10,7 +10,12 @@ PrefabInstance:
     - target: {fileID: 4612556344523233023, guid: 34faf2da325e0e74dba9a18e3b8a1cb2,
         type: 3}
       propertyPath: m_Name
-      value: cogumelo roxo pp
+      value: roxo 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612556344523233023, guid: 34faf2da325e0e74dba9a18e3b8a1cb2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cogumelo
       objectReference: {fileID: 0}
     - target: {fileID: 5424804700270120005, guid: 34faf2da325e0e74dba9a18e3b8a1cb2,
         type: 3}

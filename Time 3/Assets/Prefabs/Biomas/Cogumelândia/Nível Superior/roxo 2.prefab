@@ -80,7 +80,12 @@ PrefabInstance:
     - target: {fileID: 9022161611461783259, guid: fe4799b7c4fd47049816631828bc8b33,
         type: 3}
       propertyPath: m_Name
-      value: cogumelo roxo p
+      value: roxo 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9022161611461783259, guid: fe4799b7c4fd47049816631828bc8b33,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cogumelo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe4799b7c4fd47049816631828bc8b33, type: 3}

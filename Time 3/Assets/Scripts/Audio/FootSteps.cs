@@ -87,33 +87,12 @@ public class FootSteps : MonoBehaviour
         }
     }
 
-    /* private void Update() {
-         int terrainTextureIndex = terrainDetector.GetActiveTerrainTextureIdx(transform.position);
-         footSteps.setParameterByName("terrain", terrainTextureIndex);
-
-         FMOD.Studio.PLAYBACK_STATE state;
-         footSteps.getPlaybackState(out state);
-
-         if (playerController.isMoving && playerController.isGrounded)
-         {
-             if (state == FMOD.Studio.PLAYBACK_STATE.STOPPED)
-                 footSteps.start();
-         }
-         else
-         {
-             if (state == FMOD.Studio.PLAYBACK_STATE.PLAYING)
-                 footSteps.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-         }
-
-         //Debug.Log(terrainTextureIndex);
-     }*/
-
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Cogumelo"))
         {
             shoudlOverrideTerrain = true;
-            //terrainOverrideValue =
+            terrainOverrideValue = 7;
         }
 
     }

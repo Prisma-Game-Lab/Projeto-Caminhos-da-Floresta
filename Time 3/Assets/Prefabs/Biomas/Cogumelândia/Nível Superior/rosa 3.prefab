@@ -70,7 +70,12 @@ PrefabInstance:
     - target: {fileID: 6706793704127021606, guid: 35e05a343e824ab489ad3fc2561b5e88,
         type: 3}
       propertyPath: m_Name
-      value: cogumelo rosa m
+      value: rosa 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706793704127021606, guid: 35e05a343e824ab489ad3fc2561b5e88,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cogumelo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35e05a343e824ab489ad3fc2561b5e88, type: 3}

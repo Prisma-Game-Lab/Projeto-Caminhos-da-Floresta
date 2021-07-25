@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: azul 3
       objectReference: {fileID: 0}
+    - target: {fileID: 340876964410045661, guid: 242140c0d4fc53c45a84c76bb97f0f7f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cogumelo
+      objectReference: {fileID: 0}
     - target: {fileID: 1148656944026119783, guid: 242140c0d4fc53c45a84c76bb97f0f7f,
         type: 3}
       propertyPath: m_RootOrder
