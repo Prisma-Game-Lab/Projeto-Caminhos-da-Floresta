@@ -17,8 +17,9 @@ public class ObjectCollider : MonoBehaviour
     InputManager inputManager;
     PlayerLocomotion playerLocomotion;
 
-    FMOD.Studio.EventInstance pickItem;
-    FMOD.Studio.EventInstance lightOrb;
+    FMOD.Studio.EventInstance coletaOrbe;
+    FMOD.Studio.EventInstance coletaFlor;
+    FMOD.Studio.EventInstance acendeOrbe;
     public GameObject vfx;
 
     void Awake()
@@ -39,8 +40,9 @@ public class ObjectCollider : MonoBehaviour
 
     void Start()
     {
-        pickItem = FMODUnity.RuntimeManager.CreateInstance("event:/pickItem");
-        lightOrb = FMODUnity.RuntimeManager.CreateInstance("event:/lightOrb");
+        coletaOrbe = FMODUnity.RuntimeManager.CreateInstance("event:/coletar/orbe");
+        coletaFlor = FMODUnity.RuntimeManager.CreateInstance("event:/coletar/flor");
+        acendeOrbe = FMODUnity.RuntimeManager.CreateInstance("event:/altar/acende");
     }
 
 
@@ -91,7 +93,8 @@ public class ObjectCollider : MonoBehaviour
         if (playerLocomotion.isInteracting && !_Other.CompareTag("Pedestal"))
         {
             inputManager.HandleInteractInput();
-            pickItem.start();
+            //VERIFICAR SE EH UMA FLOR OU UMA ORBE PARA TOCAR SOM ADEQUADO
+            coletaOrbe.start();
 
             objectList.Add(_Other.name);
             _Other.SetActive(false);
@@ -104,7 +107,8 @@ public class ObjectCollider : MonoBehaviour
             {
                 Debug.Log("INTERAGINDO!!");
                 inputManager.HandleDeliverInput();
-                //orbLight.start();
+                acendeOrbe.start();
+                
                 _Other.GetComponent<OrbController>().orb.SetActive(true);
                 objectList.Remove("Offering");
                 _Other.GetComponent<FXController>().Move();
