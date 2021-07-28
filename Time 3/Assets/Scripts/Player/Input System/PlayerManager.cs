@@ -36,5 +36,9 @@ public class PlayerManager : MonoBehaviour
         playerLocomotion.isInteracting = anim.GetBool("isInteracting");
         playerLocomotion.isJumping = anim.GetBool("isJumping");
         anim.SetBool("isGrounded", playerLocomotion.isGrounded);
+        if(Mathf.Abs(playerLocomotion.gameObject.GetComponent<Rigidbody>().velocity.y)<0.01 )
+        {
+            playerLocomotion.isJumping = false;
+        }
     }
 }
