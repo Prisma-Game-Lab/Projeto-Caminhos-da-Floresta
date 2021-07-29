@@ -14,6 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 0}
   ListenerNumber: -1
+--- !u!114 &3235102436197539969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5817341803748444256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1880dc3c2ceb3a44d9ad6c0d4f8015a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8424655489376786249
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,6 +134,12 @@ PrefabInstance:
 --- !u!4 &7098926570225020879 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7322880618745555828, guid: 2d13b9e7a88219044bac928cde87945c,
+    type: 3}
+  m_PrefabInstance: {fileID: 514656126813586619}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5817341803748444256 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6313822968854547675, guid: 2d13b9e7a88219044bac928cde87945c,
     type: 3}
   m_PrefabInstance: {fileID: 514656126813586619}
   m_PrefabAsset: {fileID: 0}
