@@ -7,7 +7,7 @@ TerrainLayer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: "Grama Superior - cogumel\xE2ndia"
-  m_DiffuseTexture: {fileID: 2800000, guid: dc8a3fb89ca7529428c7711bd52bc65d, type: 3}
+  m_DiffuseTexture: {fileID: 2800000, guid: 28ffad9d21bf14e409552120e8540ac5, type: 3}
   m_NormalMapTexture: {fileID: 0}
   m_MaskMapTexture: {fileID: 0}
   m_TileSize: {x: 2, y: 2}
