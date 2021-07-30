@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/\xC1rvores Gigantes.unity"
     guid: 373a523e1e41d7443b9f790086443d08
+  - enabled: 1
+    path: "Assets/Scenes/Cogumel\xE2ndia.unity"
+    guid: a50f966d902ca804ebdea12a64e0bd5c
+  - enabled: 1
+    path: Assets/Scenes/Cave Cutscene.unity
+    guid: 3bdc43de10ff1a54f98790cd0bb3cf11
+  - enabled: 1
+    path: Assets/Scenes/Pedras.unity
+    guid: 562706745b0e20a49a66de654f1b85aa
   m_configObjects: {}
