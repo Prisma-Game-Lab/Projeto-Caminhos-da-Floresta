@@ -6066,7 +6066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 903206012}
-  story: {fileID: 32900000, guid: 8515bd079ddf3b24d9f3bec2f5b6f8aa, type: 3}
+  story: {fileID: 32900000, guid: 54f2ce4d20bf70f48820202937780838, type: 3}
   openEmpty: {fileID: 32900000, guid: b9a7ba28aaeefe345b5b0f94eb00e3b1, type: 3}
   closeEmpty: {fileID: 32900000, guid: 679c832ce7826a444b4b8a535c9bc54c, type: 3}
 --- !u!1 &948631581
