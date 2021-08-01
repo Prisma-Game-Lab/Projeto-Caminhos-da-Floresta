@@ -21826,7 +21826,7 @@ PrefabInstance:
     - target: {fileID: 56037766720574521, guid: 0b668773f304f3e43b0555ad3fed1788,
         type: 3}
       propertyPath: respawnDistance
-      value: 500
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 56037766720574521, guid: 0b668773f304f3e43b0555ad3fed1788,
         type: 3}
@@ -31643,7 +31643,7 @@ PrefabInstance:
     - target: {fileID: 56037766720574521, guid: 0b668773f304f3e43b0555ad3fed1788,
         type: 3}
       propertyPath: respawnDistance
-      value: 500
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 56037766720574521, guid: 0b668773f304f3e43b0555ad3fed1788,
         type: 3}
@@ -51361,7 +51361,7 @@ PrefabInstance:
     - target: {fileID: 56037766720574521, guid: 0b668773f304f3e43b0555ad3fed1788,
         type: 3}
       propertyPath: respawnDistance
-      value: 500
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 56037766720574521, guid: 0b668773f304f3e43b0555ad3fed1788,
         type: 3}
